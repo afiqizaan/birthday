@@ -1,8 +1,8 @@
 /* ===== Personalise here ===== */
 const CONFIG = {
-  from: 'Afiq',
-  // Set the real date to show it on the page, e.g. 'YYYY-MM-DD'. Leave null to hide.
-  date: null,
+  from: 'Zaan',
+  // Birthday date (YYYY-MM-DD). Set to null to hide the date and countdown.
+  date: '2026-10-06',
 };
 
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
