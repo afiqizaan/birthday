@@ -116,11 +116,12 @@ function openGate() {
   gate.classList.add('opening');
   startMusic();
   burst(innerWidth / 2, innerHeight / 2, 22);
+  setTimeout(() => env.classList.add('zoom'), reduceMotion ? 0 : 1900);
   setTimeout(() => {
     gate.classList.add('gone');
     document.body.classList.remove('locked');
     observeAll();
-  }, reduceMotion ? 0 : 2000);
+  }, reduceMotion ? 0 : 2300);
 }
 env.addEventListener('click', openGate);
 
