@@ -104,6 +104,32 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 const observeAll = () => document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
+/* music */
+const music = $('#music'), song = new Audio('audio/orbiter.mp3');
+song.loop = true; song.volume = 0;
+let fadeTimer;
+function fadeTo(v, ms) {
+  clearInterval(fadeTimer);
+  const step = (v - song.volume) / (ms / 50);
+  fadeTimer = setInterval(() => {
+    const nv = song.volume + step;
+    if ((step > 0 && nv >= v) || (step < 0 && nv <= v)) { song.volume = v; clearInterval(fadeTimer); if (v === 0) song.pause(); }
+    else song.volume = Math.max(0, Math.min(1, nv));
+  }, 50);
+}
+function startMusic() {
+  music.hidden = false;
+  song.play().then(() => {
+    music.classList.remove('paused'); fadeTo(.55, 3000);
+    music.classList.add('show-np'); setTimeout(() => music.classList.remove('show-np'), 5500);
+  }).catch(() => music.classList.add('paused'));
+}
+music.addEventListener('click', (e) => {
+  e.stopPropagation();
+  if (song.paused) { song.play(); fadeTo(.55, 800); music.classList.remove('paused'); music.setAttribute('aria-label', 'Pause music'); }
+  else { fadeTo(0, 600); music.classList.add('paused'); music.setAttribute('aria-label', 'Play music'); }
+});
+
 /* envelope gate */
 const gate = $('#gate'), env = $('#open');
 let opened = false;
@@ -112,6 +138,7 @@ function openGate() {
   opened = true;
   env.classList.add('open');
   gate.classList.add('opening');
+  startMusic();
   burst(innerWidth / 2, innerHeight / 2, 22);
   setTimeout(() => {
     gate.classList.add('gone');

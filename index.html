@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
   <noscript><style>.gate{display:none!important}body.locked{overflow:auto!important}.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body class="locked">
@@ -320,7 +320,16 @@
   </footer>
 </main>
 
+<button class="music" id="music" aria-label="Pause music" hidden>
+  <svg viewBox="0 0 48 48" class="vinyl" aria-hidden="true">
+    <circle cx="24" cy="24" r="22" fill="#2f4a66"/>
+    <circle cx="24" cy="24" r="16" fill="none" stroke="#5f7b97" stroke-width=".8"/><circle cx="24" cy="24" r="12" fill="none" stroke="#5f7b97" stroke-width=".8"/>
+    <circle cx="24" cy="24" r="8" fill="#bfe0f8"/><circle cx="24" cy="24" r="1.8" fill="#fffaf1"/>
+    <path d="M10 12a18 18 0 0 1 10-6" fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+  <span class="np" id="np">♪ Orbiter · Noah Kahan</span>
+</button>
 <canvas id="fx" aria-hidden="true"></canvas>
-<script src="script.js?v=6"></script>
+<script src="script.js?v=7"></script>
 </body>
 </html>

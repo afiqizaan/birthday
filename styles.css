@@ -378,3 +378,14 @@ h2 em{font-style:italic;color:var(--blue-deep)}
   .hero{padding-top:120px}
 }
 .invite .body{text-wrap:pretty;max-width:36ch}
+
+/* ---------- music ---------- */
+.music{position:fixed;right:16px;bottom:16px;z-index:40;width:52px;height:52px;border-radius:50%;border:0;padding:4px;cursor:pointer;
+  background:var(--ivory);box-shadow:0 8px 20px -6px rgba(47,74,102,.5);-webkit-tap-highlight-color:transparent;transition:transform .3s}
+.music[hidden]{display:none}
+.music:hover{transform:scale(1.08)}
+.vinyl{width:100%;height:100%;animation:spin 5s linear infinite}
+.music.paused .vinyl{animation-play-state:paused}
+.music.paused::after{content:"";position:absolute;right:-2px;top:-2px;width:14px;height:14px;border-radius:50%;background:var(--blue-deep);box-shadow:0 0 0 2px var(--ivory)}
+.np{position:absolute;right:62px;top:50%;transform:translateY(-50%);white-space:nowrap;background:var(--ivory);color:var(--ink-soft);font-size:.74rem;letter-spacing:.08em;padding:7px 14px;border-radius:999px;box-shadow:0 6px 16px -6px rgba(47,74,102,.4);opacity:0;pointer-events:none;transition:opacity .6s}
+.music.show-np .np,.music:hover .np{opacity:1}
