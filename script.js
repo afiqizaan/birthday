@@ -10,15 +10,52 @@ const $ = (s, el = document) => el.querySelector(s);
 
 document.getElementById('from').textContent = CONFIG.from;
 
-/* date line + countdown */
-if (CONFIG.date) {
+/* calendar */
+(function () {
+  const root = $('#cal');
+  if (!CONFIG.date) { $('#date').remove(); return; }
   const d = new Date(CONFIG.date + 'T00:00:00');
-  const days = Math.ceil((d - new Date().setHours(0, 0, 0, 0)) / 864e5);
-  const pretty = d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
-  const el = $('#dateLine');
-  el.textContent = days > 0 ? `${pretty} · ${days} day${days === 1 ? '' : 's'} to go` : pretty;
-  el.hidden = false;
-}
+  const y = d.getFullYear(), m = d.getMonth(), day = d.getDate();
+  const monthName = d.toLocaleDateString('en-GB', { month: 'long' });
+  const first = new Date(y, m, 1).getDay();
+  const total = new Date(y, m + 1, 0).getDate();
+  let html = `<div class="cal-head"><small>${y}</small><span class="script">${monthName}</span></div><div class="cal-grid">`;
+  html += 'SMTWTFS'.split('').map((c) => `<span class="dow">${c}</span>`).join('');
+  for (let i = 0; i < first; i++) html += '<span></span>';
+  for (let n = 1; n <= total; n++) {
+    const sun = (first + n - 1) % 7 === 0;
+    if (n === day) {
+      html += `<span class="day hl"><svg viewBox="0 0 62 62"><path pathLength="1" d="M30 5C48 3 59 17 57 32C55 48 39 59 24 55C8 51 2 35 8 20C13 9 24 4 37 7"/></svg><svg class="mini" viewBox="0 0 24 24"><use href="#heart"/></svg><span>${n}</span></span>`;
+    } else html += `<span class="day${sun ? ' sun' : ''}">${n}</span>`;
+  }
+  html += '</div>';
+  const days = Math.round((d - new Date().setHours(0, 0, 0, 0)) / 864e5);
+  const weekday = d.toLocaleDateString('en-GB', { weekday: 'long' });
+  const left = days > 1 ? `${days} days to go` : days === 1 ? 'tomorrow!' : days === 0 ? 'today!' : '';
+  html += `<div class="cal-foot"><span class="script">${weekday}, Husna's day ♡</span>${left ? `<small>${left}</small>` : ''}</div>`;
+  root.innerHTML = html;
+})();
+
+/* bunting */
+(function () {
+  const box = $('#bunting'), W = innerWidth, n = Math.max(7, Math.round(W / 46));
+  const cols = ['#bfe0f8', '#fffaf1', '#8dc2ee', '#ffffff'];
+  const P = [[-10, -2], [W / 2, 74], [W + 10, -2]];
+  const q = (t) => [0, 1].map((k) => (1 - t) ** 2 * P[0][k] + 2 * (1 - t) * t * P[1][k] + t * t * P[2][k]);
+  let flags = '';
+  for (let i = 1; i <= n; i++) {
+    const [x, y] = q(i / (n + 1));
+    flags += `<polygon class="flag" style="animation-delay:${-i * .37}s" points="${x - 15},${y} ${x + 15},${y} ${x},${y + 38}" fill="${cols[i % 4]}" stroke="#5b93c4" stroke-opacity=".25"/>`;
+  }
+  box.innerHTML = `<svg viewBox="0 0 ${W} 90" preserveAspectRatio="none"><path d="M${P[0]} Q${P[1]} ${P[2]}" fill="none" stroke="#5b93c4" stroke-opacity=".5" stroke-width="1.5"/>${flags}</svg>`;
+})();
+
+/* her photo appears only if photos/husna.jpg exists */
+(function () {
+  const img = $('#girlImg'), sec = $('#girl');
+  const show = () => { sec.hidden = false; };
+  if (img.complete && img.naturalWidth) show(); else img.addEventListener('load', show);
+})();
 
 /* twinkling stars */
 const starBox = $('#stars');
@@ -120,3 +157,13 @@ document.querySelectorAll('[data-yes]').forEach((b, i) => b.addEventListener('cl
   requestAnimationFrame(() => answer.classList.add('show'));
   document.getElementById('rsvp').classList.add('done');
 }));
+
+/* make a wish */
+$('#cake').addEventListener('click', (e) => {
+  const c = e.currentTarget;
+  if (c.classList.contains('out')) return;
+  c.classList.add('out');
+  const r = c.getBoundingClientRect();
+  burst(r.left + r.width / 2, r.top + 20, 70);
+  $('#wish').textContent = 'wish made ♡ happy birthday, Husna';
+});

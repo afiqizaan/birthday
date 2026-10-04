@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>For Husna ♡ A Birthday Invitation</title>
   <meta name="description" content="A little invitation, made just for Husna.">
-  <meta name="theme-color" content="#cfe6fb">
+  <meta name="theme-color" content="#cfe6fa">
   <meta property="og:title" content="For Husna ♡">
   <meta property="og:description" content="You're invited. A birthday day out, planned with love.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='50' font-size='52'%3E%E2%99%A1%3C/text%3E%3C/svg%3E">
@@ -17,7 +17,6 @@
 </head>
 <body class="locked">
 
-<!-- shared SVG bits -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="cloud" viewBox="0 0 200 100">
@@ -26,12 +25,29 @@
         <rect x="32" y="62" width="142" height="28" rx="14"/>
       </g>
     </symbol>
-    <symbol id="heart" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.6 4.5c2 0 3.7 1.1 5.4 3 1.7-1.9 3.4-3 5.4-3 3.6 0 5.7 3.7 4.2 7.200C19.5 16.4 12 21 12 21z"/></symbol>
+    <symbol id="heart" viewBox="0 0 24 24"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.6 4.5c2 0 3.7 1.1 5.4 3 1.7-1.9 3.4-3 5.4-3 3.6 0 5.7 3.7 4.2 7.2C19.5 16.4 12 21 12 21z"/></symbol>
     <symbol id="spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.8 6.5 2.5 10.2 12 12-9.5 1.8-11.2 5.5-12 12-.8-6.5-2.5-10.2-12-12C9.5 10.2 11.2 6.5 12 0z"/></symbol>
+    <!-- vintage corner flourish -->
+    <symbol id="flourish" viewBox="0 0 48 48">
+      <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+        <path d="M3 45V14C3 7 8 3 15 3h30"/>
+        <path d="M10 45V20c0-6 4-10 10-10h25" opacity=".55"/>
+        <path d="M16 16c0 6 8 6 8 0 0-4-5-4-5 0"/>
+      </g>
+      <circle cx="3" cy="3" r="2" fill="currentColor"/>
+    </symbol>
+    <!-- ornamental divider -->
+    <symbol id="ornament" viewBox="0 0 200 20">
+      <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+        <path d="M4 10h70M126 10h70"/>
+        <path d="M74 10c6-8 12-8 14 0s-8 6-8 0M126 10c-6-8-12-8-14 0s8 6 8 0" opacity=".7"/>
+      </g>
+      <path fill="currentColor" d="M100 3l5 7-5 7-5-7z"/>
+      <circle cx="88" cy="10" r="1.4" fill="currentColor"/><circle cx="112" cy="10" r="1.4" fill="currentColor"/>
+    </symbol>
   </defs>
 </svg>
 
-<!-- sky -->
 <div class="sky" aria-hidden="true">
   <div class="sun-glow"></div>
   <svg class="cloud c1"><use href="#cloud"/></svg>
@@ -49,7 +65,12 @@
     <button class="envelope" id="open" aria-label="Open your invitation">
       <span class="env-back"></span>
       <span class="env-letter"><span class="script">For Husna</span></span>
-      <span class="env-front"></span>
+      <svg class="env-front" viewBox="0 0 340 231" preserveAspectRatio="none" aria-hidden="true">
+        <rect y="78" width="340" height="153" fill="#d9eafa"/>
+        <polygon points="0,78 172,170 0,231" fill="#e8f2fc" stroke="#fff" stroke-opacity=".8"/>
+        <polygon points="340,78 168,170 340,231" fill="#e8f2fc" stroke="#fff" stroke-opacity=".8"/>
+        <polygon points="0,231 170,148 340,231" fill="#f1f7fd" stroke="#fff" stroke-opacity=".9"/>
+      </svg>
       <span class="env-flap"></span>
       <span class="seal"><svg><use href="#heart"/></svg></span>
     </button>
@@ -58,17 +79,19 @@
 </div>
 
 <main>
+  <div class="bunting" id="bunting" aria-hidden="true"></div>
+
   <!-- HERO -->
   <header class="hero">
-    <p class="eyebrow reveal">you are warmly invited</p>
+    <p class="eyebrow reveal">for my favourite person</p>
     <h1 class="reveal d1">
       <span class="script hello">Happy Birthday,</span>
       <span class="name">Husna</span>
     </h1>
+    <svg class="orn reveal d2"><use href="#ornament"/></svg>
     <p class="lede reveal d2">I planned a little day, just for you.<br>Soft skies, small adventures, and me by your side.</p>
-    <p class="date-line reveal d3" id="dateLine" hidden></p>
-    <a href="#plan" class="scroll-cue reveal d4" aria-label="See the plan">
-      <span>see the plan</span>
+    <a href="#card" class="scroll-cue reveal d4" aria-label="Open your invitation">
+      <span>your invitation</span>
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
     </a>
   </header>
@@ -77,8 +100,34 @@
   <section class="section" id="card">
     <article class="invite reveal">
       <div class="invite-frame">
-        <svg class="corner tl" viewBox="0 0 60 60"><use href="#spark"/></svg>
-        <svg class="corner tr" viewBox="0 0 60 60"><use href="#spark"/></svg>
+        <svg class="corner tl"><use href="#flourish"/></svg>
+        <svg class="corner bl"><use href="#flourish"/></svg>
+        <svg class="corner br"><use href="#flourish"/></svg>
+
+        <!-- stamp + postmark -->
+        <div class="stamp-wrap" aria-hidden="true">
+          <svg class="stamp" viewBox="0 0 64 78">
+            <rect width="64" height="78" fill="#cfe6fa"/>
+            <rect x="5" y="5" width="54" height="68" fill="#eef6fd" stroke="#fff" stroke-width="1.5"/>
+            <rect width="64" height="78" fill="none" stroke="#fffaf1" stroke-width="7" stroke-dasharray="0 9" stroke-linecap="round"/>
+            <g color="#5b93c4">
+              <svg x="14" y="14" width="36" height="18" viewBox="0 0 200 100" style="color:#fff"><use href="#cloud"/></svg>
+              <svg x="22" y="30" width="20" height="20" viewBox="0 0 24 24"><use href="#heart"/></svg>
+            </g>
+            <text x="32" y="62" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="8" letter-spacing="1.5" fill="#5b93c4">HUSNA</text>
+            <text x="32" y="70" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="5" letter-spacing="1" fill="#5b93c4">· 2026 ·</text>
+          </svg>
+          <svg class="postmark" viewBox="0 0 150 100">
+            <defs><path id="pm" d="M50 50m-33 0a33 33 0 1 1 66 0a33 33 0 1 1-66 0"/></defs>
+            <g fill="none" stroke="currentColor" stroke-width="1.2">
+              <circle cx="50" cy="50" r="42"/><circle cx="50" cy="50" r="24"/>
+              <path d="M96 38q8-6 14 0t14 0t14 0M96 50q8-6 14 0t14 0t14 0M96 62q8-6 14 0t14 0t14 0"/>
+            </g>
+            <text font-family="Cormorant Garamond,serif" font-size="9.5" letter-spacing="1" fill="currentColor"><textPath href="#pm" textLength="205">WITH LOVE · 06 OCT 2026 · </textPath></text>
+            <svg x="42" y="42" width="16" height="16" viewBox="0 0 24 24" style="color:currentColor"><use href="#heart"/></svg>
+          </svg>
+        </div>
+
         <p class="small-caps">an invitation</p>
         <p class="script big">Dear Husna,</p>
         <p class="body">
@@ -96,83 +145,122 @@
     </article>
   </section>
 
+  <!-- CALENDAR -->
+  <section class="section" id="date">
+    <div class="section-head reveal">
+      <p class="small-caps">save the date</p>
+      <h2>Mark your <em>calendar</em></h2>
+    </div>
+    <div class="cal reveal d1" id="cal" aria-label="Calendar"></div>
+  </section>
+
   <!-- ITINERARY -->
   <section class="section" id="plan">
     <div class="section-head reveal">
       <p class="small-caps">the plan</p>
       <h2>Our day, <em>gently</em> planned</h2>
-      <p class="note">Times may drift a little. The company won't.</p>
+      <p class="note">Plans may drift. The company won't.</p>
     </div>
 
-    <ol class="timeline">
-      <li class="stop reveal">
-        <div class="time"><b>10:00</b><small>AM</small></div>
-        <div class="dot"><svg viewBox="0 0 24 24"><path d="M3 14l2-5a2 2 0 012-1.300h10A2 2 0 0119 9l2 5v4h-2.500M3 14v4h2.500M3 14h18"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/></svg></div>
-        <div class="stop-card">
-          <h3>I come to get you</h3>
-          <p>Door-to-door service, with a very happy driver. Be ready for a good day.</p>
+    <ol class="tickets">
+      <li class="reveal">
+        <div class="ticket">
+          <div class="stub">
+            <svg class="art" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 44c0-10 6-20 20-20s26 5 30 20v4H6z" fill="#fff"/>
+              <path d="M17 36c2-6 6-8 11-8v9H17zM33 28c6 0 11 3 14 9H33z" fill="#dcecfb"/>
+              <circle cx="19" cy="49" r="6" fill="#fff"/><circle cx="46" cy="49" r="6" fill="#fff"/>
+              <path d="M56 40h4M4 40h-1"/>
+            </g></svg>
+            <b>10:00</b><small>AM</small>
+          </div>
+          <div class="info"><h3>Pick-up</h3><p>I come get you.</p></div>
         </div>
       </li>
 
-      <li class="stop reveal">
-        <div class="time"><b>11:00</b><small>AM – ~12:30</small></div>
-        <div class="dot"><svg viewBox="0 0 24 24"><path d="M7 4h10l1 3v11a3 3 0 01-3 3H9a3 3 0 01-3-3V7z"/><path d="M12 17v-4M12 13c0-2-1.5-3-3.5-3 0 2 1.3 3 3.5 3zM12 14c0-1.8 1.3-2.8 3.2-2.8 0 1.8-1.2 2.8-3.2 2.800z"/></svg></div>
-        <div class="stop-card">
-          <h3>Terrarium workshop</h3>
-          <p>Glass, moss, tiny stones and a lot of patience. We each build a little world to take home.</p>
+      <li class="reveal">
+        <div class="ticket">
+          <div class="stub">
+            <svg class="art" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10h20v6H22z" fill="#fff"/>
+              <path d="M20 16c-6 6-8 12-8 26 0 10 6 14 14 14h12c8 0 14-4 14-14 0-14-2-20-8-26z" fill="#eef6fd"/>
+              <path d="M13 44c8-5 30-5 38 0" />
+              <path d="M32 46V32M32 36c-1-6-5-8-9-8 0 5 3 8 9 8zM32 33c0-6 4-9 9-9 0 6-4 9-9 9z" fill="#dcecfb"/>
+              <circle cx="22" cy="49" r="1.6"/><circle cx="42" cy="50" r="1.6"/>
+            </g></svg>
+            <b>11:00</b><small>AM</small>
+          </div>
+          <div class="info"><h3>Terrarium workshop</h3><p>A tiny garden, in glass.</p></div>
         </div>
       </li>
 
-      <li class="stop reveal">
-        <div class="time"><b>12:30</b><small>AND AFTER</small></div>
-        <div class="dot"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="3"/><circle cx="12" cy="13" r="3.5"/><path d="M8 7l1.5-2.500h5L16 7"/></svg></div>
-        <div class="stop-card">
-          <h3>Photobooth</h3>
-          <p>Strips of silly, sweet and slightly blurry. The kind you keep forever.</p>
+      <li class="reveal">
+        <div class="ticket">
+          <div class="stub">
+            <svg class="art" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="20" y="5" width="24" height="54" rx="2" fill="#fff"/>
+              <rect x="25" y="10" width="14" height="12" fill="#dcecfb"/><rect x="25" y="26" width="14" height="12" fill="#dcecfb"/><rect x="25" y="42" width="14" height="12" fill="#dcecfb"/>
+              <path d="M32 33.500s-5-3-5-6a2.6 2.6 0 015-1 2.6 2.6 0 015 1c0 3-5 6-5 6z" fill="currentColor" stroke="none" transform="translate(0,-.5)"/>
+              <path d="M8 18l2 4 4 2-4 2-2 4-2-4-4-2 4-2zM54 38l1.5 3 3 1.5-3 1.5-1.5 3-1.5-3-3-1.5 3-1.500z" />
+            </g></svg>
+            <b>12:30</b><small>PM ON</small>
+          </div>
+          <div class="info"><h3>Photobooth</h3><p>Silly strips to keep.</p></div>
         </div>
       </li>
 
-      <li class="stop reveal">
-        <div class="time"><b>3:00</b><small>PM</small></div>
-        <div class="dot"><svg viewBox="0 0 24 24"><path d="M3 20l6-10 4 6 3-4 5 8z"/><path d="M16 5.500a2 2 0 100 .01"/></svg></div>
-        <div class="stop-card">
-          <h3>Locarasa <span>·</span> Bamboo Hills</h3>
-          <p>Fresh air, bamboo and a slower pace. A good place to just be together.</p>
+      <li class="reveal">
+        <div class="ticket">
+          <div class="stub">
+            <svg class="art" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="46" cy="16" r="7" fill="#fff"/>
+              <path d="M4 54l20-26 11 14 7-8 18 20z" fill="#eef6fd"/>
+              <path d="M10 54V22M10 32h3M10 42h3M18 54V30M18 38h3M18 46h3" />
+              <path d="M10 22c3-1 5-1 7 1M18 30c3-1 5-1 7 1"/>
+            </g></svg>
+            <b>3:00</b><small>PM</small>
+          </div>
+          <div class="info"><h3>Locarasa <i>·</i> Bamboo Hills</h3><p>Fresh air &amp; slow time.</p></div>
         </div>
       </li>
 
-      <li class="stop maybe reveal">
-        <div class="time"><b class="script">then…</b></div>
-        <div class="dot"><svg><use href="#spark"/></svg></div>
-        <div class="stop-card">
-          <h3 class="script">wherever the day takes us ♡</h3>
-          <p>Maybe somewhere new. Maybe a quiet moment to open your gifts. Maybe we just take our time getting home.</p>
+      <li class="maybe reveal">
+        <div class="ticket">
+          <div class="stub">
+            <svg class="art" viewBox="0 0 64 64"><g fill="currentColor" stroke="none">
+              <path d="M32 6c2 14 6 20 20 22-14 2-18 8-20 22-2-14-6-20-20-22 14-2 18-8 20-22z" opacity=".85"/>
+              <path d="M51 40c.8 5 2.5 6.5 7 7.5-4.5 1-6.2 2.5-7 7.5-.8-5-2.5-6.5-7-7.5 4.5-1 6.2-2.5 7-7.500z" opacity=".6"/>
+            </g></svg>
+            <b class="script">later</b>
+          </div>
+          <div class="info"><h3 class="script">wherever the day takes us ♡</h3><p>Maybe gifts, maybe somewhere new.</p></div>
         </div>
       </li>
     </ol>
   </section>
 
-  <!-- MEMORIES / POLAROIDS -->
-  <section class="section" id="memories">
+  <!-- DRESS CODE -->
+  <section class="section" id="dress">
     <div class="section-head reveal">
-      <p class="small-caps">for the day</p>
-      <h2>Little frames, <em>waiting</em></h2>
-      <p class="note">Empty for now. We will fill them together.</p>
+      <p class="small-caps">dress code</p>
+      <h2>Soft, <em>dreamy</em> &amp; pretty</h2>
+      <p class="note">Wear whichever shade feels like you.</p>
     </div>
-    <div class="polaroids">
-      <figure class="polaroid p1 reveal">
-        <div class="photo"><svg><use href="#cloud"/></svg></div>
-        <figcaption class="script">our tiny world</figcaption>
-      </figure>
-      <figure class="polaroid p2 reveal d1">
-        <div class="photo"><svg><use href="#heart"/></svg></div>
-        <figcaption class="script">photobooth strip</figcaption>
-      </figure>
-      <figure class="polaroid p3 reveal d2">
-        <div class="photo"><svg><use href="#spark"/></svg></div>
-        <figcaption class="script">bamboo hills</figcaption>
-      </figure>
+    <div class="palette">
+      <div class="chip reveal"><span class="dab" style="--c:#bfe0f8"></span><b class="script">Baby Blue</b></div>
+      <div class="chip reveal d1"><span class="dab" style="--c:#8dc2ee"></span><b class="script">Sky Blue</b></div>
+      <div class="chip reveal d2"><span class="dab" style="--c:#f6eedd"></span><b class="script">Cream</b></div>
+      <div class="chip reveal d3"><span class="dab" style="--c:#ffffff"></span><b class="script">White</b></div>
     </div>
+  </section>
+
+  <!-- HER PHOTO (only appears once photos/husna.jpg exists) -->
+  <section class="section girl" id="girl" hidden>
+    <figure class="portrait reveal">
+      <svg class="crown" viewBox="0 0 64 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6 34L3 12l14 12L32 6l15 18 14-12-3 22z" fill="#fffaf1"/><path d="M6 34h52"/><circle cx="32" cy="6" r="2.2" fill="currentColor"/><circle cx="3" cy="12" r="2" fill="currentColor"/><circle cx="61" cy="12" r="2" fill="currentColor"/></svg>
+      <div class="photo"><img id="girlImg" src="photos/husna.jpg" alt="Husna"></div>
+      <figcaption class="script">the birthday girl ♡</figcaption>
+    </figure>
   </section>
 
   <!-- RSVP -->
@@ -182,7 +270,7 @@
       <h2>Will you be <em>my date?</em></h2>
     </div>
     <div class="rsvp-box reveal d1">
-      <div class="buttons" id="buttons">
+      <div class="buttons">
         <button class="btn primary" data-yes>Yes, always ♡</button>
         <button class="btn ghost" data-yes>Of course!</button>
       </div>
@@ -190,8 +278,28 @@
     </div>
   </section>
 
+  <!-- CAKE -->
   <footer class="footer">
-    <svg class="cloud-foot"><use href="#cloud"/></svg>
+    <button class="cake" id="cake" aria-label="Blow out the candles">
+      <svg viewBox="0 0 160 150">
+        <g class="flames" fill="#ffd98a">
+          <path d="M52 34c-5-6-1-12 0-16 2 4 8 10 0 16z"/><path d="M80 30c-5-6-1-12 0-16 2 4 8 10 0 16z"/><path d="M108 34c-5-6-1-12 0-16 2 4 8 10 0 16z"/>
+        </g>
+        <g fill="#fffaf1" stroke="#5b93c4" stroke-width="1.6" stroke-linejoin="round">
+          <rect x="49" y="36" width="6" height="20"/><rect x="77" y="32" width="6" height="24"/><rect x="105" y="36" width="6" height="20"/>
+        </g>
+        <g stroke="#5b93c4" stroke-width="1.6" stroke-linejoin="round">
+          <rect x="30" y="56" width="100" height="30" rx="6" fill="#fffaf1"/>
+          <rect x="14" y="84" width="132" height="44" rx="8" fill="#eef6fd"/>
+          <path d="M30 70q10 10 20 0t20 0 20 0 20 0 20 0" fill="none" stroke="#8dc2ee"/>
+          <path d="M14 104q11 10 22 0t22 0 22 0 22 0 22 0 22 0" fill="none" stroke="#8dc2ee"/>
+          <path d="M6 128h148" stroke-linecap="round"/>
+        </g>
+        <g fill="#8dc2ee"><circle cx="40" cy="116" r="2.5"/><circle cx="80" cy="120" r="2.5"/><circle cx="120" cy="116" r="2.5"/><circle cx="60" cy="78" r="2"/><circle cx="100" cy="78" r="2"/></g>
+      </svg>
+    </button>
+    <p class="wish script" id="wish">tap the candles &amp; make a wish</p>
+    <svg class="orn"><use href="#ornament"/></svg>
     <p class="script big">Happy Birthday, Husna</p>
     <p class="tiny">made with love, for you</p>
   </footer>

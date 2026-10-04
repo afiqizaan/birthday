@@ -15,3 +15,7 @@ replace the icon inside a `.photo` div with `<img src="photos/yours.jpg" alt="">
 
 ## Deploy
 GitHub Pages: Settings → Pages → deploy from branch, root folder.
+
+## Her photo
+Drop a portrait named `photos/husna.jpg` (4:5 works best). The "the birthday girl" polaroid
+only appears when that file exists.
