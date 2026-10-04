@@ -59,30 +59,6 @@ document.querySelectorAll('.pol').forEach((fig) => {
   probe.src = fig.querySelector('img').getAttribute('src');
 });
 
-/* string-art heart */
-(function () {
-  const svg = $('#stringHeart'), N = 72, p = [];
-  for (let i = 0; i < N; i++) {
-    const t = Math.PI + (i / N) * Math.PI * 2;
-    const x = 16 * Math.sin(t) ** 3;
-    const y = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
-    p.push([50 + x * 2.75, 47 - (y + 2.5) * 2.85]);
-  }
-  let out = '';
-  const line = (i, j, cls, d) => {
-    const a = p[(i + N) % N], b = p[(j + N) % N];
-    out += `<line class="${cls}" x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}" style="transition-delay:${d}ms"/>`;
-  };
-  for (let i = 0; i < N; i++) {
-    const d = i * 28;
-    line(i, N - i, 'c', d);
-    line(i, N - i + 14, 'b', d); line(i, N - i - 14, 'b', d);
-    line(i, N - i + 5, 'a', d); line(i, N - i - 5, 'a', d);
-  }
-  p.forEach((q) => { out += `<circle cx="${q[0].toFixed(1)}" cy="${q[1].toFixed(1)}" r=".8"/>`; });
-  svg.innerHTML = out;
-})();
-
 /* twinkling stars */
 const starBox = $('#stars');
 for (let i = 0; i < 26; i++) {
@@ -105,7 +81,7 @@ const io = new IntersectionObserver((entries) => {
 const observeAll = () => document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
 /* music */
-const music = $('#music'), song = new Audio('audio/orbiter.mp3');
+const music = $('#music'), song = new Audio('audio/song.mp3');
 song.loop = true; song.volume = 0;
 let fadeTimer;
 function fadeTo(v, ms) {
@@ -120,13 +96,13 @@ function fadeTo(v, ms) {
 function startMusic() {
   music.hidden = false;
   song.play().then(() => {
-    music.classList.remove('paused'); fadeTo(.55, 3000);
+    music.classList.remove('paused'); fadeTo(.4, 3500);
     music.classList.add('show-np'); setTimeout(() => music.classList.remove('show-np'), 5500);
   }).catch(() => music.classList.add('paused'));
 }
 music.addEventListener('click', (e) => {
   e.stopPropagation();
-  if (song.paused) { song.play(); fadeTo(.55, 800); music.classList.remove('paused'); music.setAttribute('aria-label', 'Pause music'); }
+  if (song.paused) { song.play(); fadeTo(.4, 800); music.classList.remove('paused'); music.setAttribute('aria-label', 'Pause music'); }
   else { fadeTo(0, 600); music.classList.add('paused'); music.setAttribute('aria-label', 'Play music'); }
 });
 
@@ -207,7 +183,7 @@ document.querySelectorAll('[data-yes]').forEach((b, i) => b.addEventListener('cl
   const r = b.getBoundingClientRect();
   burst(r.left + r.width / 2, r.top + r.height / 2, 60);
   setTimeout(() => burst(innerWidth / 2, innerHeight * .4, 40), 250);
-  answer.textContent = 'Yay! See you at 10 ♡';
+  answer.textContent = 'Yay! I can\'t wait ♡';
   requestAnimationFrame(() => answer.classList.add('show'));
   document.getElementById('rsvp').classList.add('done');
 }));

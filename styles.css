@@ -311,22 +311,12 @@ h2 em{font-style:italic;color:var(--blue-deep)}
 .cloth::after{content:"";position:absolute;inset:8px;border:2px dashed rgba(91,147,196,.55);border-radius:2px}
 .swatch b{font-size:1.7rem;color:var(--blue-deep);font-weight:600;line-height:1}
 
-/* footer: string-art heart on kraft card */
-.stringcard{
-  position:relative;width:min(230px,70vw);aspect-ratio:1/1;margin:6px auto 22px;padding:20px 20px 16px;transform:rotate(-2.5deg);
-  background:var(--fiber),linear-gradient(160deg,#e6d3b0,var(--kraft) 55%,var(--kraft-dark));
-  border-radius:4px;box-shadow:0 22px 30px -14px rgba(70,50,20,.55),inset 0 0 0 1px rgba(255,255,255,.3);
-  transition:opacity 1s ease,transform 1s ease;
-}
-.stringcard.reveal:not(.in){transform:rotate(-2.5deg) translateY(26px)}
-.stringcard::after{content:"";position:absolute;inset:9px;border:1.5px dashed rgba(91,74,48,.35);border-radius:2px;pointer-events:none}
-.tape.t8{top:-13px;left:50%;margin-left:-44px;transform:rotate(3deg)}
-.string-heart{width:100%;height:100%;overflow:visible}
-.string-heart line{stroke-linecap:round;stroke-width:.42;opacity:0;transition:opacity .6s ease}
-.string-heart .a{stroke:#3f78ad}.string-heart .b{stroke:#8dc2ee}.string-heart .c{stroke:#fffaf1;stroke-width:.3}
-.stringcard.in .string-heart line{opacity:.9}
-.string-heart circle{fill:#fffaf1;stroke:#7a6446;stroke-width:.3}
-@media (prefers-reduced-motion:reduce){.string-heart line{opacity:.9}}
+/* footer: pressed flowers */
+.foot-deco{position:relative;display:flex;justify-content:center;align-items:flex-end;gap:26px;height:140px;margin-bottom:8px}
+.foot-deco .sprig{position:static;width:54px;height:132px;opacity:.9}
+.foot-deco .sprig.fl{transform:rotate(-10deg)}
+.foot-deco .sprig.fr{transform:rotate(10deg) scaleX(-1)}
+.foot-deco .daisy{position:static;width:54px;height:54px;margin-bottom:4px}
 .footer .big{font-size:clamp(3.4rem,14vw,5.2rem);color:var(--blue-deep);line-height:1.05;margin-top:12px}
 .tiny{margin-top:14px;font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-soft)}
 
