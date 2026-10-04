@@ -311,23 +311,22 @@ h2 em{font-style:italic;color:var(--blue-deep)}
 .cloth::after{content:"";position:absolute;inset:8px;border:2px dashed rgba(91,147,196,.55);border-radius:2px}
 .swatch b{font-size:1.7rem;color:var(--blue-deep);font-weight:600;line-height:1}
 
-/* footer: hanging gift tag */
-.line{position:absolute;left:0;right:0;top:0;height:60px;pointer-events:none}
-.line svg{width:100%;height:100%}
-.hang{position:relative;width:170px;margin:0 auto 18px;padding-top:34px;transform-origin:50% 0;animation:swing 6s ease-in-out infinite}
-@keyframes swing{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
-.twine{position:absolute;left:50%;top:0;width:60px;height:60px;margin-left:-30px;overflow:visible}
-.tag{
-  position:relative;padding:34px 16px 22px;text-align:center;color:#5b4a30;
+/* footer: string-art heart on kraft card */
+.stringcard{
+  position:relative;width:min(230px,70vw);aspect-ratio:1/1;margin:6px auto 22px;padding:20px 20px 16px;transform:rotate(-2.5deg);
   background:var(--fiber),linear-gradient(160deg,#e6d3b0,var(--kraft) 55%,var(--kraft-dark));
-  clip-path:polygon(24% 0,76% 0,100% 16%,100% 100%,0 100%,0 16%);
-  filter:none;
+  border-radius:4px;box-shadow:0 22px 30px -14px rgba(70,50,20,.55),inset 0 0 0 1px rgba(255,255,255,.3);
+  transition:opacity 1s ease,transform 1s ease;
 }
-.tag::before{content:"";position:absolute;top:13px;left:50%;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--sky,#bfdff8);box-shadow:0 0 0 4px rgba(255,250,241,.75),inset 0 1px 3px rgba(60,40,10,.4)}
-.tag small{display:block;font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:#7a6446}
-.tag .to{display:block;font-family:var(--hand);font-weight:600;font-size:2rem;line-height:1.1;margin:4px 0 2px;color:var(--blue-deep)}
-.tag .date{display:block;margin-top:8px;padding-top:8px;border-top:1.5px dashed rgba(91,74,48,.4);font-family:var(--serif);font-size:1rem;letter-spacing:.14em}
-.tag-wrap{filter:drop-shadow(0 14px 12px rgba(70,50,20,.35))}
+.stringcard.reveal:not(.in){transform:rotate(-2.5deg) translateY(26px)}
+.stringcard::after{content:"";position:absolute;inset:9px;border:1.5px dashed rgba(91,74,48,.35);border-radius:2px;pointer-events:none}
+.tape.t8{top:-13px;left:50%;margin-left:-44px;transform:rotate(3deg)}
+.string-heart{width:100%;height:100%;overflow:visible}
+.string-heart line{stroke-linecap:round;stroke-width:.42;opacity:0;transition:opacity .6s ease}
+.string-heart .a{stroke:#3f78ad}.string-heart .b{stroke:#8dc2ee}.string-heart .c{stroke:#fffaf1;stroke-width:.3}
+.stringcard.in .string-heart line{opacity:.9}
+.string-heart circle{fill:#fffaf1;stroke:#7a6446;stroke-width:.3}
+@media (prefers-reduced-motion:reduce){.string-heart line{opacity:.9}}
 .footer .big{font-size:clamp(3.4rem,14vw,5.2rem);color:var(--blue-deep);line-height:1.05;margin-top:12px}
 .tiny{margin-top:14px;font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-soft)}
 

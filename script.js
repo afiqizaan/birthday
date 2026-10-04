@@ -59,6 +59,30 @@ document.querySelectorAll('.pol').forEach((fig) => {
   probe.src = fig.querySelector('img').getAttribute('src');
 });
 
+/* string-art heart */
+(function () {
+  const svg = $('#stringHeart'), N = 72, p = [];
+  for (let i = 0; i < N; i++) {
+    const t = Math.PI + (i / N) * Math.PI * 2;
+    const x = 16 * Math.sin(t) ** 3;
+    const y = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
+    p.push([50 + x * 2.75, 47 - (y + 2.5) * 2.85]);
+  }
+  let out = '';
+  const line = (i, j, cls, d) => {
+    const a = p[(i + N) % N], b = p[(j + N) % N];
+    out += `<line class="${cls}" x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}" style="transition-delay:${d}ms"/>`;
+  };
+  for (let i = 0; i < N; i++) {
+    const d = i * 28;
+    line(i, N - i, 'c', d);
+    line(i, N - i + 14, 'b', d); line(i, N - i - 14, 'b', d);
+    line(i, N - i + 5, 'a', d); line(i, N - i - 5, 'a', d);
+  }
+  p.forEach((q) => { out += `<circle cx="${q[0].toFixed(1)}" cy="${q[1].toFixed(1)}" r=".8"/>`; });
+  svg.innerHTML = out;
+})();
+
 /* twinkling stars */
 const starBox = $('#stars');
 for (let i = 0; i < 26; i++) {
