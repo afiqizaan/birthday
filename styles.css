@@ -74,17 +74,23 @@ svg{display:block}
 .env-letter .script{font-size:2.1rem;line-height:1.05;text-align:center}
 .env-letter small{font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-soft)}
 .env-front{inset:0;width:100%;height:100%;border-radius:8px;overflow:hidden;z-index:2}
-.env-flap{
-  left:0;right:0;top:0;height:63%;background:linear-gradient(#e9f3fd,#c4dcf2);filter:drop-shadow(0 -2px 4px rgba(70,120,170,.2));
-  clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;
-  z-index:3;
-}
+.env-flap{left:0;right:0;top:0;height:63%;transform-origin:top;transform-style:preserve-3d;z-index:3}
+.env-flap i{position:absolute;inset:0;clip-path:polygon(0 0,100% 0,50% 100%);backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.env-flap .ff{background:linear-gradient(#e9f3fd,#c4dcf2)}
+.env-flap .fb{transform:rotateX(180deg);
+  background:radial-gradient(circle at 7px 7px,#9bc7ec 1.5px,transparent 2px) 0 0/14px 14px,linear-gradient(#f3f9fe,#d6e8f9)}
 .seal{
-  left:50%;top:50%;width:54px;height:54px;margin:-34px 0 0 -27px;z-index:3;border-radius:50%;
-  background:radial-gradient(circle at 35% 30%,#a7d3f4,#5b93c4);display:grid;place-items:center;color:#fff;
-  box-shadow:0 6px 14px rgba(50,100,160,.4);transition:transform .4s ease,opacity .4s;z-index:4;
+  left:50%;top:50%;width:60px;height:60px;margin:-36px 0 0 -30px;z-index:4;
+  border-radius:52% 48% 50% 46% / 48% 52% 46% 50%;
+  background:radial-gradient(circle at 35% 28%,#b4d9f6,#5b93c4 68%,#4a7fb0);display:grid;place-items:center;color:#fff;
+  box-shadow:inset 0 -4px 7px rgba(30,70,120,.4),inset 0 3px 5px rgba(255,255,255,.45),0 9px 16px rgba(50,100,160,.45);
+  transition:transform .4s ease,opacity .4s;animation:wobble 5s ease-in-out infinite;
 }
-.seal svg{width:24px;height:24px}
+.seal::before{content:"";position:absolute;inset:7px;border-radius:50%;border:1.5px solid rgba(255,255,255,.45)}
+.seal::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(91,147,196,.55);animation:ring 2.6s ease-out infinite}
+@keyframes ring{from{transform:scale(1);opacity:.7}to{transform:scale(1.7);opacity:0}}
+@keyframes wobble{0%,86%,100%{transform:rotate(0)}90%{transform:rotate(-8deg)}94%{transform:rotate(7deg)}98%{transform:rotate(-3deg)}}
+.seal svg{width:24px;height:24px;filter:drop-shadow(0 1px 1px rgba(30,70,120,.5))}
 .envelope:hover .seal{transform:scale(1.1)}
 .envelope.open{animation:none}
 .envelope.open .env-flap{animation:flap .8s ease forwards}
@@ -388,3 +394,21 @@ h2 em{font-style:italic;color:var(--blue-deep)}
 .gate{transition:opacity 1.2s ease .2s,transform 1.2s ease,visibility 0s linear 1.4s}
 .gate.gone{transform:scale(1.04);opacity:0;visibility:hidden}
 .gate.opening .gate-tap{animation:none;opacity:0}
+
+/* envelope enhancements */
+.env-shadow{left:8%;right:8%;bottom:-26px;height:22px;border-radius:50%;background:radial-gradient(ellipse,rgba(60,110,160,.35),transparent 70%);animation:shadowpulse 5s ease-in-out infinite}
+@keyframes shadowpulse{50%{transform:scale(.88);opacity:.7}}
+.env-stamp{right:7%;bottom:8%;width:34px;height:42px;z-index:3;transform:rotate(5deg);filter:drop-shadow(0 2px 2px rgba(60,110,160,.3))}
+.addr{left:9%;right:auto;bottom:10%;text-align:left;font-size:1.6rem;transform:rotate(-3deg)}
+.env-letter{gap:0;padding-top:9%;border:1px solid rgba(91,147,196,.25)}
+.env-letter::before{content:"";position:absolute;inset:5px;border:1.2px dashed rgba(91,147,196,.4);border-radius:2px}
+.env-letter small{font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:-2px}
+.env-letter .script{font-size:2.6rem;line-height:1.1}
+.env-letter em{font-style:normal;font-family:var(--serif);font-size:.95rem;letter-spacing:.2em;color:var(--blue-deep);margin-top:4px}
+.gcloud{position:absolute;color:#fff;opacity:.8;filter:drop-shadow(0 10px 18px rgba(91,147,196,.2));animation:drift linear infinite}
+.g1{width:240px;height:120px;top:10%;left:-260px;animation-duration:90s}
+.g2{width:170px;height:85px;top:70%;left:-260px;animation-duration:120s;animation-delay:-50s;opacity:.65}
+.g3{width:300px;height:150px;top:42%;left:-320px;animation-duration:150s;animation-delay:-100s;opacity:.5}
+.gate-inner{position:relative;z-index:1}
+.envelope{animation:float 5s ease-in-out infinite}
+.envelope:hover{filter:brightness(1.03)}

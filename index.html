@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=11">
   <noscript><style>.gate{display:none!important}body.locked{overflow:auto!important}.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body class="locked">
@@ -74,6 +74,15 @@
       <path d="M30 14v26M30 14c-2-5-5-7-7-8M30 14c2-5 5-7 7-8" fill="none" stroke="#2f4a66" stroke-width="1.6" stroke-linecap="round"/>
       <g fill="#fff" opacity=".85"><circle cx="15" cy="12" r="2.200"/><circle cx="45" cy="12" r="2.200"/></g>
     </symbol>
+    <symbol id="stampsym" viewBox="0 0 64 78">
+      <rect width="64" height="78" fill="#cfe6fa"/>
+      <rect x="5" y="5" width="54" height="68" fill="#eef6fd" stroke="#fff" stroke-width="1.5"/>
+      <rect width="64" height="78" fill="none" stroke="#dbeaf9" stroke-width="7" stroke-dasharray="0 9" stroke-linecap="round"/>
+      <svg x="14" y="14" width="36" height="18" viewBox="0 0 200 100" style="color:#fff"><use href="#cloud"/></svg>
+      <svg x="22" y="30" width="20" height="20" viewBox="0 0 24 24" style="color:#5b93c4"><use href="#heart"/></svg>
+      <text x="32" y="62" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="9" letter-spacing="1.5" fill="#5b93c4">UNA</text>
+      <text x="32" y="70" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="5" letter-spacing="1" fill="#5b93c4">· 2026 ·</text>
+    </symbol>
     <!-- ornamental divider -->
     <symbol id="ornament" viewBox="0 0 200 20">
       <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
@@ -98,19 +107,24 @@
 
 <!-- envelope gate -->
 <div class="gate" id="gate">
+  <svg class="gcloud g1" aria-hidden="true"><use href="#cloud"/></svg>
+  <svg class="gcloud g2" aria-hidden="true"><use href="#cloud"/></svg>
+  <svg class="gcloud g3" aria-hidden="true"><use href="#cloud"/></svg>
   <div class="gate-inner">
     <p class="gate-hint script">a little something for you</p>
     <button class="envelope" id="open" aria-label="Open your invitation">
+      <span class="env-shadow"></span>
       <span class="env-back"></span>
-      <span class="env-letter"><span class="script">Happy Birthday,<br>Una</span></span>
+      <span class="env-letter"><small>you're</small><span class="script">invited</span><em>6 · 10 · 2026</em></span>
       <svg class="env-front" viewBox="0 0 340 231" preserveAspectRatio="none" aria-hidden="true">
         <rect y="78" width="340" height="153" fill="#d9eafa"/>
         <polygon points="0,78 172,170 0,231" fill="#e8f2fc" stroke="#fff" stroke-opacity=".8"/>
         <polygon points="340,78 168,170 340,231" fill="#e8f2fc" stroke="#fff" stroke-opacity=".8"/>
         <polygon points="0,231 170,148 340,231" fill="#f1f7fd" stroke="#fff" stroke-opacity=".9"/>
       </svg>
+      <svg class="env-stamp" viewBox="0 0 64 78" aria-hidden="true"><use href="#stampsym"/></svg>
       <span class="addr hand">to Una</span>
-      <span class="env-flap"></span>
+      <span class="env-flap"><i class="ff"></i><i class="fb"></i></span>
       <span class="seal"><svg><use href="#heart"/></svg></span>
     </button>
     <p class="gate-tap">tap to open</p>
@@ -339,6 +353,6 @@
   <span class="np" id="np">♪ a little music box</span>
 </button>
 <canvas id="fx" aria-hidden="true"></canvas>
-<script src="script.js?v=10"></script>
+<script src="script.js?v=11"></script>
 </body>
 </html>
