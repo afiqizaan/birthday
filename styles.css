@@ -445,3 +445,13 @@ h2 em{font-style:italic;color:var(--blue-deep)}
 .seal::after{inset:-12px}
 .envelope.open .seal .l{transform:translate(-4px,2px) rotate(-4deg)}
 .envelope.open .seal .r{transform:translate(4px,-1px) rotate(4deg)}
+
+/* pressed lilies */
+.daisy{width:56px;height:56px;animation:sway2 9s ease-in-out infinite}
+@keyframes sway2{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+.collage .daisy.d2{width:46px;height:46px}
+.cal-wrap .daisy.d3{width:54px;height:54px;left:-20px;bottom:-18px}
+.foot-deco .daisy{width:72px;height:72px;margin-bottom:6px}
+.hlily{position:absolute;width:64px;height:64px;pointer-events:none;filter:drop-shadow(0 3px 3px rgba(70,120,170,.25));animation:sway2 9s ease-in-out infinite}
+.hlily.hl1{left:calc(6% + 30px);bottom:7%;width:58px;height:58px}
+.hlily.hl2{right:calc(6% + 34px);bottom:10%;width:50px;height:50px;animation-delay:-4s}
