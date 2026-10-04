@@ -311,7 +311,17 @@
   </section>
 
   <footer class="footer">
-    <svg class="string-heart reveal" id="stringHeart" viewBox="0 0 100 100" aria-hidden="true"></svg>
+    <div class="felt reveal" aria-hidden="true">
+      <svg viewBox="0 0 120 150">
+        <path d="M60 4c-4 12 6 14 0 24" fill="none" stroke="#b69a6e" stroke-width="2" stroke-linecap="round"/>
+        <path d="M60 4C40-2 40 18 60 24c20-6 20-26 0-20z" fill="none" stroke="#b69a6e" stroke-width="2"/>
+        <defs><filter id="fuzz"><feTurbulence baseFrequency=".8" numOctaves="2" result="n"/><feColorMatrix in="n" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0" result="w"/><feComposite in="w" in2="SourceGraphic" operator="in"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="w"/></feMerge></filter></defs>
+        <path d="M60 138S8 104 8 62C8 38 24 26 40 26c11 0 19 6 20 14 1-8 9-14 20-14 16 0 32 12 32 36 0 42-52 76-52 76z" fill="#a9d4f5" stroke="#8dc2ee" stroke-width="1"/>
+        <path d="M60 124S20 96 20 62c0-17 11-26 21-26 9 0 16 6 19 14 3-8 10-14 19-14 10 0 21 9 21 26 0 34-40 62-40 62z" fill="none" stroke="#fffaf1" stroke-width="2.4" stroke-dasharray="6 5" stroke-linecap="round"/>
+        <g transform="translate(60 74)"><circle r="11" fill="#fffaf1" stroke="#c9b48a" stroke-width="1.2"/><circle r="7.5" fill="none" stroke="#e0d3b8"/><g fill="#b69a6e"><circle cx="-2.4" cy="-2.4" r="1.1"/><circle cx="2.4" cy="-2.4" r="1.1"/><circle cx="-2.4" cy="2.4" r="1.1"/><circle cx="2.4" cy="2.4" r="1.1"/></g><path d="M-2.4-2.4L2.4 2.4M2.4-2.4L-2.4 2.4" stroke="#5b93c4" stroke-width="1"/></g>
+        <path d="M60 85c4 14 14 18 22 20" fill="none" stroke="#5b93c4" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="3 3"/>
+      </svg>
+    </div>
     <p class="script big">Happy Birthday, Una</p>
     <p class="tiny">made with love, for you</p>
   </footer>

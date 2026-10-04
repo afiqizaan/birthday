@@ -59,24 +59,6 @@ document.querySelectorAll('.pol').forEach((fig) => {
   probe.src = fig.querySelector('img').getAttribute('src');
 });
 
-/* string-art heart */
-(function () {
-  const svg = $('#stringHeart'), N = 60, K = 22, pts = [];
-  for (let i = 0; i < N; i++) {
-    const t = (i / N) * Math.PI * 2;
-    const x = 16 * Math.sin(t) ** 3;
-    const y = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
-    pts.push([50 + x * 2.8, 46 - (y + 2.5) * 2.9]);
-  }
-  let out = '', c = 0;
-  for (let i = 0; i < N; i++) {
-    const j = (i + K) % N;
-    { out += `<line x1="${pts[i][0].toFixed(1)}" y1="${pts[i][1].toFixed(1)}" x2="${pts[j][0].toFixed(1)}" y2="${pts[j][1].toFixed(1)}" style="transition-delay:${c++ * 40}ms"/>`; }
-  }
-  pts.forEach((p) => { out += `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="1"/>`; });
-  svg.innerHTML = out;
-})();
-
 /* twinkling stars */
 const starBox = $('#stars');
 for (let i = 0; i < 26; i++) {
