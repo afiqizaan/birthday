@@ -87,12 +87,13 @@ function openGate() {
   if (opened) return;
   opened = true;
   env.classList.add('open');
+  gate.classList.add('opening');
   burst(innerWidth / 2, innerHeight / 2, 22);
   setTimeout(() => {
     gate.classList.add('gone');
     document.body.classList.remove('locked');
     observeAll();
-  }, reduceMotion ? 0 : 1300);
+  }, reduceMotion ? 0 : 2000);
 }
 env.addEventListener('click', openGate);
 
@@ -155,7 +156,7 @@ document.querySelectorAll('[data-yes]').forEach((b, i) => b.addEventListener('cl
   const r = b.getBoundingClientRect();
   burst(r.left + r.width / 2, r.top + r.height / 2, 60);
   setTimeout(() => burst(innerWidth / 2, innerHeight * .4, 40), 250);
-  answer.textContent = 'Yay! I can\'t wait ♡';
+  answer.textContent = 'Yay! See you at 10 ♡';
   requestAnimationFrame(() => answer.classList.add('show'));
   document.getElementById('rsvp').classList.add('done');
 }));
