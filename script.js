@@ -34,7 +34,7 @@ document.getElementById('from').textContent = CONFIG.from;
   const days = Math.round((d - new Date().setHours(0, 0, 0, 0)) / 864e5);
   const weekday = d.toLocaleDateString('en-GB', { weekday: 'long' });
   const left = days > 1 ? `${days} days to go` : days === 1 ? 'tomorrow!' : days === 0 ? 'today!' : '';
-  html += `<div class="cal-foot"><span class="hand">${weekday}, Una's day ♡</span>${left ? `<small>${left}</small>` : ''}</div>`;
+  html += `<div class="cal-foot"><span class="hand">${weekday}, Una's day</span>${left ? `<small>${left}</small>` : ''}</div>`;
   root.innerHTML = html;
 })();
 
@@ -183,7 +183,7 @@ document.querySelectorAll('[data-yes]').forEach((b, i) => b.addEventListener('cl
   const r = b.getBoundingClientRect();
   burst(r.left + r.width / 2, r.top + r.height / 2, 60);
   setTimeout(() => burst(innerWidth / 2, innerHeight * .4, 40), 250);
-  answer.textContent = 'Yay! I can\'t wait ♡';
+  answer.textContent = 'Yay! I can\'t wait';
   requestAnimationFrame(() => answer.classList.add('show'));
   document.getElementById('rsvp').classList.add('done');
 }));
