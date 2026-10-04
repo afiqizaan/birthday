@@ -11,6 +11,7 @@
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Jost',system-ui,sans-serif;
   --script:'Pinyon Script','Snell Roundhand',cursive;
+  --hand:'Caveat','Segoe Print','Bradley Hand',cursive;
   --paper:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .5 0 0 0 0 .4 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -22,6 +23,7 @@ body{
 }
 body.locked{overflow:hidden;height:100vh}
 .script{font-family:var(--script);font-weight:400}
+.hand{font-family:var(--hand);font-weight:600}
 svg{display:block}
 
 /* ---------- sky ---------- */
@@ -128,7 +130,7 @@ h2 em{font-style:italic;color:var(--blue-deep)}
 .invite{
   background:var(--ivory) var(--paper);border-radius:6px;padding:14px;
   box-shadow:0 30px 60px -20px rgba(70,120,170,.4),0 2px 0 rgba(255,255,255,.8) inset;
-  transform:rotate(-.8deg);transition:transform .6s ease,opacity 1s ease;
+  transform:rotate(-.8deg);transition:transform .6s ease,opacity 1s ease;position:relative;
 }
 .invite.in:hover{transform:rotate(0) translateY(-4px)}
 .invite-frame{
@@ -139,16 +141,6 @@ h2 em{font-style:italic;color:var(--blue-deep)}
 .invite .body{font-family:var(--serif);font-size:clamp(1.15rem,3.4vw,1.35rem);max-width:34ch;margin:0 auto 14px;color:var(--ink)}
 .sig{margin-top:30px;display:flex;flex-direction:column;font-size:1.8rem;color:var(--ink-soft);line-height:1.2}
 .sig .who{font-size:2.6rem;color:var(--blue-deep)}
-.corner{position:absolute;width:34px;height:34px;color:var(--blue)}
-.corner.tl{top:12px;left:12px}
-.corner.bl{bottom:12px;left:12px;transform:scaleY(-1)}
-.corner.br{bottom:12px;right:12px;transform:scale(-1)}
-.heart-sm{width:18px;height:18px;margin:20px auto 0;color:var(--blue);animation:beat 2.2s ease-in-out infinite}
-@keyframes beat{0%,100%{transform:scale(1)}14%{transform:scale(1.25)}28%{transform:scale(1)}42%{transform:scale(1.18)}}
-.stamp-wrap{position:absolute;top:14px;right:14px;width:84px;height:84px}
-.stamp{position:absolute;top:0;right:0;width:46px;height:56px;transform:rotate(4deg);filter:drop-shadow(0 2px 3px rgba(70,120,170,.3))}
-.postmark{position:absolute;top:22px;right:-6px;width:84px;transform:rotate(-14deg);color:var(--blue-deep);opacity:.55;mix-blend-mode:multiply}
-
 /* ---------- calendar ---------- */
 .cal{
   position:relative;max-width:360px;margin:30px auto 0;padding:46px 22px 26px;
@@ -170,16 +162,14 @@ h2 em{font-style:italic;color:var(--blue-deep)}
 .cal-grid .dow{font-size:.64rem;letter-spacing:.14em;color:var(--blue);font-weight:500;padding-bottom:6px;border-bottom:1px solid var(--line);margin-bottom:6px}
 .cal-grid .day{position:relative;height:40px;display:grid;place-items:center;font-family:var(--serif);font-size:1.2rem;color:var(--ink-soft)}
 .cal-grid .day.sun{color:var(--blue)}
-.cal-grid .day.hl{color:#fff;font-weight:600;font-size:1.45rem;z-index:1}
-.day.hl::before{content:"";position:absolute;width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#a7d3f4,#5b93c4);box-shadow:0 8px 16px -4px rgba(50,100,160,.6);z-index:-1;transform:scale(0);transition:transform .7s cubic-bezier(.3,1.6,.5,1) .6s}
-.cal.in .day.hl::before{transform:scale(1)}
+.cal-grid .day.hl{color:var(--blue-deep);font-weight:600;font-size:1.6rem;z-index:1}
 .day.hl span{position:relative}
-.day.hl svg{position:absolute;width:56px;height:56px;left:50%;top:50%;margin:-28px 0 0 -28px;overflow:visible}
-.day.hl svg path{fill:none;stroke:var(--blue-deep);stroke-width:1.4;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.4s ease 1s}
-.cal.in .day.hl svg path{stroke-dashoffset:0}
+.day.hl svg{position:absolute;width:60px;height:60px;left:50%;top:50%;margin:-30px 0 0 -30px;overflow:visible}
+.day.hl svg path{fill:none;stroke:var(--blue-deep);stroke-width:2.2;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.4s ease 1s}
+.cal-wrap.in .day.hl svg path{stroke-dashoffset:0}
 .day.hl .mini{position:absolute;top:-14px;right:-4px;width:14px;height:14px;margin:0;left:auto;color:#e8a0a8}
 .cal-foot{margin-top:18px;text-align:center}
-.cal-foot .script{font-size:1.9rem;color:var(--blue-deep);display:block;line-height:1.2}
+.cal-foot .hand{font-size:1.9rem;color:var(--blue-deep);display:block;line-height:1.2}
 .cal-foot small{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft)}
 
 /* ---------- tickets ---------- */
@@ -212,29 +202,6 @@ h2 em{font-style:italic;color:var(--blue-deep)}
 .maybe .ticket::before{content:"";position:absolute;inset:4px;border:1.5px dashed var(--blue);border-radius:10px;pointer-events:none}
 .maybe .info h3{font-size:1.9rem;color:var(--blue-deep);line-height:1.2}
 
-/* ---------- dress code ---------- */
-.palette{display:grid;grid-template-columns:repeat(2,auto);justify-content:center;gap:28px 54px}
-@media (min-width:560px){.palette{grid-template-columns:repeat(4,auto);gap:28px 36px}}
-.chip{display:flex;flex-direction:column;align-items:center;gap:10px}
-.dab{
-  width:84px;height:84px;border-radius:50%;background:var(--c);
-  border:5px solid #fff;box-shadow:0 14px 24px -10px rgba(70,120,170,.55),0 0 0 1px rgba(91,147,196,.25),inset 0 0 14px rgba(91,147,196,.22);
-  transition:transform .4s cubic-bezier(.3,1.6,.5,1);position:relative;
-}
-.dab::after{content:"";position:absolute;inset:8px;border-radius:50%;background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.7),transparent 55%)}
-.chip:hover .dab{transform:translateY(-6px) scale(1.08)}
-.chip b{font-size:1.5rem;color:var(--ink-soft);font-weight:400}
-
-/* ---------- her photo ---------- */
-.girl{text-align:center}
-.portrait{position:relative;display:inline-block;width:min(290px,80vw);background:var(--ivory) var(--paper);padding:14px 14px 22px;border-radius:3px;box-shadow:0 26px 46px -16px rgba(70,120,170,.55);transform:rotate(2deg);transition:transform .5s cubic-bezier(.2,.9,.3,1.2),opacity 1s ease;margin-top:34px}
-.portrait.in:hover{transform:rotate(0) scale(1.03)}
-.portrait::before{content:"";position:absolute;top:-13px;left:50%;width:70px;height:24px;margin-left:-35px;background:rgba(191,223,248,.7);transform:rotate(-3deg)}
-.crown{position:absolute;top:-52px;left:50%;width:64px;height:40px;margin-left:-32px;color:var(--blue-deep);transform:rotate(-6deg);filter:drop-shadow(0 4px 4px rgba(70,120,170,.25))}
-.photo{aspect-ratio:4/5;background:#dcecfb;overflow:hidden}
-.photo img{width:100%;height:100%;object-fit:cover;display:block}
-.portrait figcaption{margin-top:14px;font-size:2rem;color:var(--blue-deep);line-height:1}
-
 /* ---------- rsvp ---------- */
 .rsvp-box{text-align:center}
 .buttons{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
@@ -254,17 +221,6 @@ h2 em{font-style:italic;color:var(--blue-deep)}
 
 /* ---------- footer ---------- */
 .footer{text-align:center;padding:40px 22px 90px;position:relative}
-.cake{background:none;border:0;cursor:pointer;width:170px;margin:0 auto;display:block;-webkit-tap-highlight-color:transparent;transition:transform .3s}
-.cake:hover{transform:scale(1.04)}
-.cake svg{width:100%;filter:drop-shadow(0 14px 16px rgba(70,120,170,.3))}
-.flames path{transform-box:fill-box;transform-origin:50% 100%;animation:flicker 1.2s ease-in-out infinite;filter:drop-shadow(0 0 5px rgba(255,217,138,.9));transition:opacity .6s,transform .6s}
-.flames path:nth-child(2){animation-delay:-.4s}.flames path:nth-child(3){animation-delay:-.8s}
-@keyframes flicker{50%{transform:scale(.9,1.12) rotate(3deg)}}
-.cake.out .flames path{opacity:0;transform:translateY(-10px) scale(.4);animation:none}
-.wish{margin:8px 0 22px;font-size:1.7rem;color:var(--ink-soft)}
-.footer .big{font-size:clamp(2.2rem,8vw,3.2rem);color:var(--blue-deep);margin-top:14px}
-.tiny{margin-top:6px;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft)}
-
 #fx{position:fixed;inset:0;pointer-events:none;z-index:60;width:100%;height:100%}
 
 @media (max-width:420px){.ticket{--s:96px}.tickets>li:not(:last-child)::after{left:48px}.info{padding:14px}.info h3{font-size:1.35rem}.stub b{font-size:1.25rem}.art{width:46px;height:46px}.invite-frame{padding:62px 22px 46px}}
@@ -272,3 +228,88 @@ h2 em{font-style:italic;color:var(--blue-deep)}
   *{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
 }
+
+/* ================= handcrafted / scrapbook layer ================= */
+.hero{position:relative}
+.sprig{position:absolute;width:48px;height:120px;color:#8fb0cc;opacity:.75;filter:drop-shadow(0 3px 3px rgba(70,120,170,.2));pointer-events:none}
+.hero .sprig.sl{left:6%;bottom:12%;transform:rotate(-14deg)}
+.hero .sprig.sr{right:6%;bottom:16%;transform:rotate(16deg) scaleX(-1)}
+.daisy{position:absolute;width:44px;height:44px;filter:drop-shadow(0 3px 3px rgba(70,120,170,.25));animation:spin 40s linear infinite;pointer-events:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* washi tape */
+.tape{position:absolute;display:block;width:88px;height:26px;z-index:3;pointer-events:none;
+  background:repeating-linear-gradient(90deg,rgba(255,255,255,.7) 0 7px,rgba(141,194,238,.6) 7px 14px);
+  clip-path:polygon(0 0,100% 0,97% 25%,100% 50%,97% 75%,100% 100%,0 100%,3% 75%,0 50%,3% 25%);
+  box-shadow:0 1px 2px rgba(70,120,170,.2)}
+.tape.t1{top:-12px;left:50%;margin-left:-44px;transform:rotate(-3deg)}
+.tape.t2{top:-10px;left:12px;transform:rotate(-32deg);background:repeating-linear-gradient(0deg,rgba(255,255,255,.7) 0 5px,rgba(141,194,238,.55) 5px 10px)}
+.tape.t3{top:-10px;right:10px;transform:rotate(28deg)}
+.tape.t4{top:-13px;left:50%;margin-left:-44px;transform:rotate(2deg);width:104px}
+.tape.t5{top:-16px;left:6px;transform:rotate(-28deg)}
+.tape.t6,.tape.t7{top:-12px;left:50%;margin-left:-44px;transform:rotate(-4deg);width:64px}
+.tape.t7{background:repeating-linear-gradient(135deg,rgba(255,255,255,.75) 0 6px,rgba(191,224,248,.75) 6px 12px);transform:rotate(5deg)}
+
+/* her day collage */
+.her{max-width:640px;position:relative}
+.hand{color:var(--ink-soft)}
+.section-head .hand{font-size:1.7rem;color:var(--blue-deep);line-height:1.2}
+.collage{position:relative;display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:30px 18px;padding-top:40px}
+.pol{position:relative;background:var(--ivory) var(--paper);padding:12px 12px 14px;border-radius:2px;box-shadow:0 22px 40px -16px rgba(70,120,170,.55);transition:transform .6s cubic-bezier(.2,.9,.3,1.2),opacity 1s ease;margin:0}
+.pol .photo{aspect-ratio:4/5;background:#dcecfb;overflow:hidden}
+.pol img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.95) contrast(.98)}
+.pol figcaption{margin-top:8px;text-align:center;font-size:1.6rem;line-height:1;color:var(--blue-deep)}
+.pol.main{width:min(280px,78vw);flex:0 0 100%;max-width:280px;margin:0 auto;z-index:2;--r:-2deg}
+.pol.side{width:min(150px,40vw);padding:8px 8px 10px;z-index:1}
+.pol.side figcaption{font-size:1.2rem}
+.pol.side.a{--r:-5deg;margin:0}
+.pol.side.b{--r:4deg;margin:12px 0 0}
+.pol.in{transform:rotate(var(--r))}
+.pol.in:hover{transform:rotate(0) scale(1.05);z-index:5}
+.crown{position:absolute;top:-52px;left:50%;width:64px;height:40px;margin-left:-32px;color:var(--blue-deep);transform:rotate(-6deg);filter:drop-shadow(0 4px 4px rgba(70,120,170,.25))}
+.collage .sprig.sl{left:-4px;top:80px;transform:rotate(-8deg);height:150px;width:60px}
+.collage .daisy.d1{right:6%;top:110px}
+.collage .daisy.d2{left:4%;bottom:-6px;width:34px;height:34px}
+
+/* invitation card: stitched */
+.invite-frame{border:0;outline:0;padding:20px 24px 44px}
+.invite-frame::before{content:"";position:absolute;inset:0;border:2px dashed rgba(91,147,196,.55);border-radius:4px;pointer-events:none}
+.inv-top{display:flex;justify-content:space-between;align-items:flex-start;margin:0 0 6px;text-align:left}
+.inv-top .small-caps{margin-top:8px}
+.stamp{width:50px;height:61px;transform:rotate(4deg);filter:drop-shadow(0 2px 3px rgba(70,120,170,.3));flex:none}
+.invite .greet{font-size:clamp(2rem,7.6vw,2.7rem);line-height:1.2;color:var(--blue-deep);margin:10px auto 22px;max-width:15em;text-wrap:balance}
+.invite .body{margin-bottom:16px}
+.sig .hand{font-size:1.6rem;color:var(--ink-soft)}
+
+/* calendar extras */
+.cal-wrap{position:relative;max-width:360px;margin:30px auto 0}
+.cal-wrap .cal{margin:0}
+.butterfly{position:absolute;right:-14px;bottom:70px;width:54px;height:46px;transform:rotate(18deg);filter:drop-shadow(0 4px 4px rgba(70,120,170,.3));animation:flutter 5s ease-in-out infinite;z-index:4}
+@keyframes flutter{0%,100%{transform:rotate(18deg) translateY(0)}50%{transform:rotate(10deg) translateY(-8px)}}
+.cal-wrap .daisy.d3{left:-16px;bottom:-14px;width:40px;height:40px}
+.cal-grid .day.x{color:rgba(95,123,151,.55)}
+.cal-grid .day.x::before,.cal-grid .day.x::after{content:"";position:absolute;width:24px;height:2px;background:var(--blue-deep);opacity:.75;border-radius:2px;transform:rotate(40deg)}
+.cal-grid .day.x::after{transform:rotate(-40deg)}
+
+/* tickets: calmer final stop */
+.stub small{font-size:.6rem;letter-spacing:.22em}
+.maybe .info h3{font-family:var(--hand);font-size:1.6rem;font-weight:600;line-height:1.1;text-wrap:balance}
+.maybe .art{width:44px;height:44px}
+
+/* dress code swatches */
+.swatches{display:flex;justify-content:center;gap:34px;flex-wrap:wrap}
+.swatch{position:relative;display:flex;flex-direction:column;align-items:center;gap:12px;transition:transform .5s cubic-bezier(.2,.9,.3,1.2),opacity 1s ease}
+.swatch.in{transform:rotate(var(--r))}
+.swatch.in:hover{transform:rotate(0) translateY(-6px)}
+.cloth{position:relative;width:118px;height:118px;border-radius:4px;background:var(--c);
+  background-image:repeating-linear-gradient(0deg,rgba(91,147,196,.09) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(91,147,196,.09) 0 1px,transparent 1px 3px);
+  box-shadow:0 18px 26px -12px rgba(70,120,170,.55),0 0 0 1px rgba(91,147,196,.18);}
+.cloth::after{content:"";position:absolute;inset:8px;border:2px dashed rgba(91,147,196,.55);border-radius:2px}
+.swatch b{font-size:1.7rem;color:var(--blue-deep);font-weight:600;line-height:1}
+
+/* footer: string-art heart */
+.string-heart{width:130px;height:130px;margin:0 auto 6px;color:var(--blue-deep);overflow:visible;filter:drop-shadow(0 6px 8px rgba(70,120,170,.25))}
+.string-heart line{stroke:currentColor;stroke-width:.7;stroke-linecap:round;opacity:0;transition:opacity .5s ease}
+.string-heart.in line{opacity:.7}
+.string-heart circle{fill:#fffaf1;stroke:currentColor;stroke-width:.8}
+@media (prefers-reduced-motion:reduce){.string-heart line{opacity:.7}}

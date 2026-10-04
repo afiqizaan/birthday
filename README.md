@@ -1,4 +1,4 @@
-# For Husna ♡
+# For Una ♡
 
 A one-page birthday invitation: sky-blue, cloudy, ivory and a little dreamy.
 Plain HTML/CSS/JS, no build step.
@@ -16,6 +16,6 @@ replace the icon inside a `.photo` div with `<img src="photos/yours.jpg" alt="">
 ## Deploy
 GitHub Pages: Settings → Pages → deploy from branch, root folder.
 
-## Her photo
-Drop a portrait named `photos/husna.jpg` (4:5 works best). The "the birthday girl" polaroid
-only appears when that file exists.
+## Her photos
+Add `photos/una-1.jpg` (main, 4:5 works best), plus optionally `una-2.jpg` and `una-3.jpg`.
+The "birthday girl" collage after the hero shows only the photos that exist.

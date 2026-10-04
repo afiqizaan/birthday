@@ -19,6 +19,8 @@ document.getElementById('from').textContent = CONFIG.from;
   const monthName = d.toLocaleDateString('en-GB', { month: 'long' });
   const first = new Date(y, m, 1).getDay();
   const total = new Date(y, m + 1, 0).getDate();
+  const now = new Date();
+  const today = now.getFullYear() === y && now.getMonth() === m ? now.getDate() : (now < d ? 0 : 99);
   let html = `<div class="cal-head"><small>${y}</small><span class="script">${monthName}</span></div><div class="cal-grid">`;
   html += 'SMTWTFS'.split('').map((c) => `<span class="dow">${c}</span>`).join('');
   for (let i = 0; i < first; i++) html += '<span></span>';
@@ -26,13 +28,13 @@ document.getElementById('from').textContent = CONFIG.from;
     const sun = (first + n - 1) % 7 === 0;
     if (n === day) {
       html += `<span class="day hl"><svg viewBox="0 0 62 62"><path pathLength="1" d="M30 5C48 3 59 17 57 32C55 48 39 59 24 55C8 51 2 35 8 20C13 9 24 4 37 7"/></svg><svg class="mini" viewBox="0 0 24 24"><use href="#heart"/></svg><span>${n}</span></span>`;
-    } else html += `<span class="day${sun ? ' sun' : ''}">${n}</span>`;
+    } else html += `<span class="day${sun ? ' sun' : ''}${n < today ? ' x' : ''}">${n}</span>`;
   }
   html += '</div>';
   const days = Math.round((d - new Date().setHours(0, 0, 0, 0)) / 864e5);
   const weekday = d.toLocaleDateString('en-GB', { weekday: 'long' });
   const left = days > 1 ? `${days} days to go` : days === 1 ? 'tomorrow!' : days === 0 ? 'today!' : '';
-  html += `<div class="cal-foot"><span class="script">${weekday}, Husna's day ♡</span>${left ? `<small>${left}</small>` : ''}</div>`;
+  html += `<div class="cal-foot"><span class="hand">${weekday}, Una's day ♡</span>${left ? `<small>${left}</small>` : ''}</div>`;
   root.innerHTML = html;
 })();
 
@@ -50,11 +52,29 @@ document.getElementById('from').textContent = CONFIG.from;
   box.innerHTML = `<svg viewBox="0 0 ${W} 90" preserveAspectRatio="none"><path d="M${P[0]} Q${P[1]} ${P[2]}" fill="none" stroke="#5b93c4" stroke-opacity=".5" stroke-width="1.5"/>${flags}</svg>`;
 })();
 
-/* her photo appears only if photos/husna.jpg exists */
+/* her photos: sections appear only for photos that exist (photos/una-1.jpg ...) */
+document.querySelectorAll('.pol').forEach((fig) => {
+  const probe = new Image();
+  probe.onload = () => { fig.hidden = false; $('#her').hidden = false; observeAll(); };
+  probe.src = fig.querySelector('img').getAttribute('src');
+});
+
+/* string-art heart */
 (function () {
-  const img = $('#girlImg'), sec = $('#girl');
-  const show = () => { sec.hidden = false; };
-  if (img.complete && img.naturalWidth) show(); else img.addEventListener('load', show);
+  const svg = $('#stringHeart'), N = 60, K = 22, pts = [];
+  for (let i = 0; i < N; i++) {
+    const t = (i / N) * Math.PI * 2;
+    const x = 16 * Math.sin(t) ** 3;
+    const y = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
+    pts.push([50 + x * 2.8, 46 - (y + 2.5) * 2.9]);
+  }
+  let out = '', c = 0;
+  for (let i = 0; i < N; i++) {
+    const j = (i + K) % N;
+    { out += `<line x1="${pts[i][0].toFixed(1)}" y1="${pts[i][1].toFixed(1)}" x2="${pts[j][0].toFixed(1)}" y2="${pts[j][1].toFixed(1)}" style="transition-delay:${c++ * 40}ms"/>`; }
+  }
+  pts.forEach((p) => { out += `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="1"/>`; });
+  svg.innerHTML = out;
 })();
 
 /* twinkling stars */
@@ -158,12 +178,3 @@ document.querySelectorAll('[data-yes]').forEach((b, i) => b.addEventListener('cl
   document.getElementById('rsvp').classList.add('done');
 }));
 
-/* make a wish */
-$('#cake').addEventListener('click', (e) => {
-  const c = e.currentTarget;
-  if (c.classList.contains('out')) return;
-  c.classList.add('out');
-  const r = c.getBoundingClientRect();
-  burst(r.left + r.width / 2, r.top + 20, 70);
-  $('#wish').textContent = 'wish made ♡ happy birthday, Husna';
-});

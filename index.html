@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>For Husna ♡ A Birthday Invitation</title>
-  <meta name="description" content="A little invitation, made just for Husna.">
+  <title>For Una ♡ A Birthday Invitation</title>
+  <meta name="description" content="A little invitation, made just for Una.">
   <meta name="theme-color" content="#cfe6fa">
-  <meta property="og:title" content="For Husna ♡">
+  <meta property="og:title" content="For Una ♡">
   <meta property="og:description" content="You're invited. A birthday day out, planned with love.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='50' font-size='52'%3E%E2%99%A1%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <noscript><style>.gate{display:none!important}body.locked{overflow:auto!important}.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
@@ -35,6 +35,37 @@
         <path d="M16 16c0 6 8 6 8 0 0-4-5-4-5 0"/>
       </g>
       <circle cx="3" cy="3" r="2" fill="currentColor"/>
+    </symbol>
+    <!-- pressed baby's-breath sprig -->
+    <symbol id="sprig" viewBox="0 0 60 150">
+      <g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+        <path d="M30 150C28 110 33 62 30 12"/>
+        <path d="M30 108C20 98 12 86 9 70M30 86C42 76 50 64 52 48M30 64C22 56 17 46 17 32M30 44C38 36 42 28 42 16M30 128C22 122 16 114 13 104"/>
+        <path d="M30 100c-6-1-9-4-10-9M30 78c6-1 9-4 10-9M30 118c6-1 9-4 10-9" opacity=".7"/>
+      </g>
+      <g fill="#fffaf1" stroke="currentColor" stroke-width="1.1">
+        <circle cx="30" cy="10" r="4"/><circle cx="9" cy="68" r="4"/><circle cx="52" cy="46" r="4"/><circle cx="17" cy="30" r="4"/><circle cx="42" cy="14" r="3.500"/><circle cx="13" cy="102" r="3.500"/>
+        <circle cx="22" cy="20" r="2.600"/><circle cx="46" cy="60" r="2.600"/><circle cx="14" cy="82" r="2.600"/>
+      </g>
+      <g fill="currentColor"><circle cx="30" cy="10" r="1"/><circle cx="9" cy="68" r="1"/><circle cx="52" cy="46" r="1"/><circle cx="17" cy="30" r="1"/></g>
+    </symbol>
+    <symbol id="daisy" viewBox="0 0 40 40">
+      <g fill="#fff" stroke="#8fb0cc" stroke-width="1">
+        <g id="pet"><ellipse cx="20" cy="9" rx="4.500" ry="8"/></g>
+        <use href="#pet" transform="rotate(45 20 20)"/><use href="#pet" transform="rotate(90 20 20)"/><use href="#pet" transform="rotate(135 20 20)"/>
+        <use href="#pet" transform="rotate(180 20 20)"/><use href="#pet" transform="rotate(225 20 20)"/><use href="#pet" transform="rotate(270 20 20)"/><use href="#pet" transform="rotate(315 20 20)"/>
+      </g>
+      <circle cx="20" cy="20" r="4.500" fill="#f1dca0" stroke="#d9be72" stroke-width="1"/>
+    </symbol>
+    <symbol id="butterfly" viewBox="0 0 60 50">
+      <g class="wing" stroke="#5b93c4" stroke-width="1.2" stroke-linejoin="round">
+        <path d="M30 24C22 6 6 2 4 12c-1 8 8 14 26 12z" fill="#bfe0f8"/>
+        <path d="M30 26C20 30 10 34 12 42c3 7 14 3 18-16z" fill="#8dc2ee"/>
+        <path d="M30 24C38 6 54 2 56 12c1 8-8 14-26 12z" fill="#bfe0f8"/>
+        <path d="M30 26C40 30 50 34 48 42c-3 7-14 3-18-16z" fill="#8dc2ee"/>
+      </g>
+      <path d="M30 14v26M30 14c-2-5-5-7-7-8M30 14c2-5 5-7 7-8" fill="none" stroke="#2f4a66" stroke-width="1.6" stroke-linecap="round"/>
+      <g fill="#fff" opacity=".85"><circle cx="15" cy="12" r="2.200"/><circle cx="45" cy="12" r="2.200"/></g>
     </symbol>
     <!-- ornamental divider -->
     <symbol id="ornament" viewBox="0 0 200 20">
@@ -64,7 +95,7 @@
     <p class="gate-hint script">a little something for you</p>
     <button class="envelope" id="open" aria-label="Open your invitation">
       <span class="env-back"></span>
-      <span class="env-letter"><span class="script">For Husna</span></span>
+      <span class="env-letter"><span class="script">For Una</span></span>
       <svg class="env-front" viewBox="0 0 340 231" preserveAspectRatio="none" aria-hidden="true">
         <rect y="78" width="340" height="153" fill="#d9eafa"/>
         <polygon points="0,78 172,170 0,231" fill="#e8f2fc" stroke="#fff" stroke-opacity=".8"/>
@@ -83,64 +114,75 @@
 
   <!-- HERO -->
   <header class="hero">
-    <p class="eyebrow reveal">for my favourite person</p>
+    <svg class="sprig sl" aria-hidden="true"><use href="#sprig"/></svg>
+    <svg class="sprig sr" aria-hidden="true"><use href="#sprig"/></svg>
     <h1 class="reveal d1">
       <span class="script hello">Happy Birthday,</span>
-      <span class="name">Husna</span>
+      <span class="name">Una</span>
     </h1>
     <svg class="orn reveal d2"><use href="#ornament"/></svg>
-    <p class="lede reveal d2">I planned a little day, just for you.<br>Soft skies, small adventures, and me by your side.</p>
-    <a href="#card" class="scroll-cue reveal d4" aria-label="Open your invitation">
-      <span>your invitation</span>
+    <p class="lede reveal d2">I planned a little day, just for you.</p>
+    <a href="#her" class="scroll-cue reveal d4" aria-label="Open your invitation">
+      <span>scroll</span>
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
     </a>
   </header>
 
+  <!-- THE BIRTHDAY GIRL (appears when photos/una-1.jpg etc. exist) -->
+  <section class="section her" id="her" hidden>
+    <div class="section-head reveal">
+      <p class="small-caps">6 october</p>
+      <h2>The <em>birthday</em> girl</h2>
+      <p class="hand">today is all about you ♡</p>
+    </div>
+    <div class="collage">
+      <svg class="sprig sl" aria-hidden="true"><use href="#sprig"/></svg>
+      <figure class="pol main reveal" hidden>
+        <i class="tape t1"></i>
+        <svg class="crown" viewBox="0 0 64 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6 34L3 12l14 12L32 6l15 18 14-12-3 22z" fill="#fffaf1"/><path d="M6 34h52"/><circle cx="32" cy="6" r="2.2" fill="currentColor"/><circle cx="3" cy="12" r="2" fill="currentColor"/><circle cx="61" cy="12" r="2" fill="currentColor"/></svg>
+        <div class="photo"><img src="photos/una-1.jpg" alt="Una"></div>
+        <figcaption class="hand">Una ♡</figcaption>
+      </figure>
+      <figure class="pol side a reveal d1" hidden>
+        <i class="tape t2"></i>
+        <div class="photo"><img src="photos/una-2.jpg" alt="Una"></div>
+        <figcaption class="hand">my favourite</figcaption>
+      </figure>
+      <figure class="pol side b reveal d2" hidden>
+        <i class="tape t3"></i>
+        <div class="photo"><img src="photos/una-3.jpg" alt="Una"></div>
+        <figcaption class="hand">birthday girl</figcaption>
+      </figure>
+      <svg class="daisy d1" aria-hidden="true"><use href="#daisy"/></svg>
+      <svg class="daisy d2" aria-hidden="true"><use href="#daisy"/></svg>
+    </div>
+  </section>
+
   <!-- INVITATION CARD -->
   <section class="section" id="card">
     <article class="invite reveal">
+      <i class="tape t4"></i>
       <div class="invite-frame">
-        <svg class="corner tl"><use href="#flourish"/></svg>
-        <svg class="corner bl"><use href="#flourish"/></svg>
-        <svg class="corner br"><use href="#flourish"/></svg>
-
-        <!-- stamp + postmark -->
-        <div class="stamp-wrap" aria-hidden="true">
-          <svg class="stamp" viewBox="0 0 64 78">
+        <div class="inv-top">
+          <p class="small-caps">an invitation</p>
+          <svg class="stamp" viewBox="0 0 64 78" aria-hidden="true">
             <rect width="64" height="78" fill="#cfe6fa"/>
             <rect x="5" y="5" width="54" height="68" fill="#eef6fd" stroke="#fff" stroke-width="1.5"/>
             <rect width="64" height="78" fill="none" stroke="#fffaf1" stroke-width="7" stroke-dasharray="0 9" stroke-linecap="round"/>
-            <g color="#5b93c4">
-              <svg x="14" y="14" width="36" height="18" viewBox="0 0 200 100" style="color:#fff"><use href="#cloud"/></svg>
-              <svg x="22" y="30" width="20" height="20" viewBox="0 0 24 24"><use href="#heart"/></svg>
-            </g>
-            <text x="32" y="62" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="8" letter-spacing="1.5" fill="#5b93c4">HUSNA</text>
+            <svg x="14" y="14" width="36" height="18" viewBox="0 0 200 100" style="color:#fff"><use href="#cloud"/></svg>
+            <svg x="22" y="30" width="20" height="20" viewBox="0 0 24 24" style="color:#5b93c4"><use href="#heart"/></svg>
+            <text x="32" y="62" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="9" letter-spacing="1.5" fill="#5b93c4">UNA</text>
             <text x="32" y="70" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="5" letter-spacing="1" fill="#5b93c4">· 2026 ·</text>
           </svg>
-          <svg class="postmark" viewBox="0 0 150 100">
-            <defs><path id="pm" d="M50 50m-33 0a33 33 0 1 1 66 0a33 33 0 1 1-66 0"/></defs>
-            <g fill="none" stroke="currentColor" stroke-width="1.2">
-              <circle cx="50" cy="50" r="42"/><circle cx="50" cy="50" r="24"/>
-              <path d="M96 38q8-6 14 0t14 0t14 0M96 50q8-6 14 0t14 0t14 0M96 62q8-6 14 0t14 0t14 0"/>
-            </g>
-            <text font-family="Cormorant Garamond,serif" font-size="9.5" letter-spacing="1" fill="currentColor"><textPath href="#pm" textLength="205">WITH LOVE · 06 OCT 2026 · </textPath></text>
-            <svg x="42" y="42" width="16" height="16" viewBox="0 0 24 24" style="color:currentColor"><use href="#heart"/></svg>
-          </svg>
         </div>
-
-        <p class="small-caps">an invitation</p>
-        <p class="script big">Dear Husna,</p>
-        <p class="body">
-          Will you spend a day with me?<br>
-          I'll come pick you up, we'll make tiny worlds out of glass and moss,
-          take silly photos, and breathe in some fresh mountain air.
-        </p>
-        <p class="body">No need to plan a thing. Just bring your smile.</p>
+        <p class="script greet">Happy birthday to my favorite person in the world! ♡</p>
+        <p class="body">Will you spend your special day with me?</p>
+        <p class="body">I’ve planned a little day just for us hopefully plenty of moments that make you smile.</p>
+        <p class="body">You don’t have to worry about planning anything.<br>Just be ready at 10, and let me take care of the rest.</p>
         <div class="sig">
-          <span class="script">with all my love,</span>
+          <span class="hand">from your handsome boy,</span>
           <span class="script who" id="from">Zaan</span>
         </div>
-        <svg class="heart-sm"><use href="#heart"/></svg>
       </div>
     </article>
   </section>
@@ -151,7 +193,12 @@
       <p class="small-caps">save the date</p>
       <h2>Mark your <em>calendar</em></h2>
     </div>
-    <div class="cal reveal d1" id="cal" aria-label="Calendar"></div>
+    <div class="cal-wrap reveal d1">
+      <div class="cal" id="cal" aria-label="Calendar"></div>
+      <i class="tape t5"></i>
+      <svg class="butterfly" aria-hidden="true"><use href="#butterfly"/></svg>
+      <svg class="daisy d3" aria-hidden="true"><use href="#daisy"/></svg>
+    </div>
   </section>
 
   <!-- ITINERARY -->
@@ -159,7 +206,6 @@
     <div class="section-head reveal">
       <p class="small-caps">the plan</p>
       <h2>Our day, <em>gently</em> planned</h2>
-      <p class="note">Plans may drift. The company won't.</p>
     </div>
 
     <ol class="tickets">
@@ -213,14 +259,12 @@
         <div class="ticket">
           <div class="stub">
             <svg class="art" viewBox="0 0 64 64"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="46" cy="16" r="7" fill="#fff"/>
-              <path d="M4 54l20-26 11 14 7-8 18 20z" fill="#eef6fd"/>
-              <path d="M10 54V22M10 32h3M10 42h3M18 54V30M18 38h3M18 46h3" />
-              <path d="M10 22c3-1 5-1 7 1M18 30c3-1 5-1 7 1"/>
+              <circle cx="32" cy="34" r="17" fill="#fff"/><circle cx="32" cy="34" r="10" fill="#eef6fd"/>
+              <path d="M7 12v14c0 3 2 5 5 5s5-2 5-5V12M12 12v40M57 12c-5 3-7 9-7 16h7zM57 28v24"/>
             </g></svg>
             <b>3:00</b><small>PM</small>
           </div>
-          <div class="info"><h3>Locarasa <i>·</i> Bamboo Hills</h3><p>Fresh air &amp; slow time.</p></div>
+          <div class="info"><h3>Lunch</h3><p>Good food, good company.</p></div>
         </div>
       </li>
 
@@ -231,9 +275,9 @@
               <path d="M32 6c2 14 6 20 20 22-14 2-18 8-20 22-2-14-6-20-20-22 14-2 18-8 20-22z" opacity=".85"/>
               <path d="M51 40c.8 5 2.5 6.5 7 7.5-4.5 1-6.2 2.5-7 7.5-.8-5-2.5-6.5-7-7.5 4.5-1 6.2-2.5 7-7.500z" opacity=".6"/>
             </g></svg>
-            <b class="script">later</b>
+            <small>LATER</small>
           </div>
-          <div class="info"><h3 class="script">wherever the day takes us ♡</h3><p>Maybe gifts, maybe somewhere new.</p></div>
+          <div class="info"><h3 class="hand">wherever the day takes us ♡</h3><p>Maybe gifts, maybe somewhere new.</p></div>
         </div>
       </li>
     </ol>
@@ -243,24 +287,12 @@
   <section class="section" id="dress">
     <div class="section-head reveal">
       <p class="small-caps">dress code</p>
-      <h2>Soft, <em>dreamy</em> &amp; pretty</h2>
-      <p class="note">Wear whichever shade feels like you.</p>
+      <h2>Baby blue <em>&amp;</em> white</h2>
     </div>
-    <div class="palette">
-      <div class="chip reveal"><span class="dab" style="--c:#bfe0f8"></span><b class="script">Baby Blue</b></div>
-      <div class="chip reveal d1"><span class="dab" style="--c:#8dc2ee"></span><b class="script">Sky Blue</b></div>
-      <div class="chip reveal d2"><span class="dab" style="--c:#f6eedd"></span><b class="script">Cream</b></div>
-      <div class="chip reveal d3"><span class="dab" style="--c:#ffffff"></span><b class="script">White</b></div>
+    <div class="swatches">
+      <div class="swatch reveal" style="--c:#bfe0f8;--r:-4deg"><i class="tape t6"></i><span class="cloth"></span><b class="hand">Baby Blue</b></div>
+      <div class="swatch reveal d1" style="--c:#ffffff;--r:3deg"><i class="tape t7"></i><span class="cloth"></span><b class="hand">White</b></div>
     </div>
-  </section>
-
-  <!-- HER PHOTO (only appears once photos/husna.jpg exists) -->
-  <section class="section girl" id="girl" hidden>
-    <figure class="portrait reveal">
-      <svg class="crown" viewBox="0 0 64 40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M6 34L3 12l14 12L32 6l15 18 14-12-3 22z" fill="#fffaf1"/><path d="M6 34h52"/><circle cx="32" cy="6" r="2.2" fill="currentColor"/><circle cx="3" cy="12" r="2" fill="currentColor"/><circle cx="61" cy="12" r="2" fill="currentColor"/></svg>
-      <div class="photo"><img id="girlImg" src="photos/husna.jpg" alt="Husna"></div>
-      <figcaption class="script">the birthday girl ♡</figcaption>
-    </figure>
   </section>
 
   <!-- RSVP -->
@@ -278,29 +310,9 @@
     </div>
   </section>
 
-  <!-- CAKE -->
   <footer class="footer">
-    <button class="cake" id="cake" aria-label="Blow out the candles">
-      <svg viewBox="0 0 160 150">
-        <g class="flames" fill="#ffd98a">
-          <path d="M52 34c-5-6-1-12 0-16 2 4 8 10 0 16z"/><path d="M80 30c-5-6-1-12 0-16 2 4 8 10 0 16z"/><path d="M108 34c-5-6-1-12 0-16 2 4 8 10 0 16z"/>
-        </g>
-        <g fill="#fffaf1" stroke="#5b93c4" stroke-width="1.6" stroke-linejoin="round">
-          <rect x="49" y="36" width="6" height="20"/><rect x="77" y="32" width="6" height="24"/><rect x="105" y="36" width="6" height="20"/>
-        </g>
-        <g stroke="#5b93c4" stroke-width="1.6" stroke-linejoin="round">
-          <rect x="30" y="56" width="100" height="30" rx="6" fill="#fffaf1"/>
-          <rect x="14" y="84" width="132" height="44" rx="8" fill="#eef6fd"/>
-          <path d="M30 70q10 10 20 0t20 0 20 0 20 0 20 0" fill="none" stroke="#8dc2ee"/>
-          <path d="M14 104q11 10 22 0t22 0 22 0 22 0 22 0 22 0" fill="none" stroke="#8dc2ee"/>
-          <path d="M6 128h148" stroke-linecap="round"/>
-        </g>
-        <g fill="#8dc2ee"><circle cx="40" cy="116" r="2.5"/><circle cx="80" cy="120" r="2.5"/><circle cx="120" cy="116" r="2.5"/><circle cx="60" cy="78" r="2"/><circle cx="100" cy="78" r="2"/></g>
-      </svg>
-    </button>
-    <p class="wish script" id="wish">tap the candles &amp; make a wish</p>
-    <svg class="orn"><use href="#ornament"/></svg>
-    <p class="script big">Happy Birthday, Husna</p>
+    <svg class="string-heart reveal" id="stringHeart" viewBox="0 0 100 100" aria-hidden="true"></svg>
+    <p class="script big">Happy Birthday, Una</p>
     <p class="tiny">made with love, for you</p>
   </footer>
 </main>
