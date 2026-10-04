@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=13">
+  <link rel="stylesheet" href="styles.css?v=16">
   <noscript><style>.gate{display:none!important}body.locked{overflow:auto!important}.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body class="locked">
@@ -74,6 +74,38 @@
       <path d="M30 14v26M30 14c-2-5-5-7-7-8M30 14c2-5 5-7 7-8" fill="none" stroke="#2f4a66" stroke-width="1.6" stroke-linecap="round"/>
       <g fill="#fff" opacity=".85"><circle cx="15" cy="12" r="2.200"/><circle cx="45" cy="12" r="2.200"/></g>
     </symbol>
+    <symbol id="wax" viewBox="0 0 100 100">
+      <defs>
+        <linearGradient id="waxg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a9d3f3"/><stop offset=".5" stop-color="#78aedd"/><stop offset="1" stop-color="#4f86b8"/></linearGradient>
+        <radialGradient id="waxh" cx=".32" cy=".26" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></radialGradient>
+        <linearGradient id="waxd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#86b9e4"/><stop offset="1" stop-color="#5f93c4"/></linearGradient>
+        <path id="leaf" d="M0 0C5-7 13-7 18 0C13 7 5 7 0 0Z"/>
+        <g id="sprigmotif">
+          <path d="M31 72C43 60 57 44 68 28" fill="none" stroke-width="2.2" stroke-linecap="round"/>
+          <use href="#leaf" transform="translate(39.5 62) rotate(-100) scale(.8)"/>
+          <use href="#leaf" transform="translate(39.5 62) rotate(0) scale(.8)"/>
+          <use href="#leaf" transform="translate(49 51) rotate(-100) scale(.85)"/>
+          <use href="#leaf" transform="translate(49 51) rotate(0) scale(.85)"/>
+          <use href="#leaf" transform="translate(58.5 39.5) rotate(-100) scale(.8)"/>
+          <use href="#leaf" transform="translate(58.5 39.5) rotate(0) scale(.8)"/>
+          <use href="#leaf" transform="translate(66.5 29) rotate(-52) scale(.75)"/>
+          
+        </g>
+      </defs>
+      <path d="M50 4C67 2 81 9 91 22C99 34 98 51 95 63C92 79 80 92 62 96C46 99 29 95 16 84C4 73 1 56 5 41C8 25 21 7 50 4Z" fill="url(#waxg)"/>
+      <path d="M50 4C67 2 81 9 91 22C99 34 98 51 95 63C92 79 80 92 62 96C46 99 29 95 16 84C4 73 1 56 5 41C8 25 21 7 50 4Z" fill="url(#waxh)"/>
+      <path d="M14 30C20 14 34 8 48 7" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="2" stroke-linecap="round"/>
+      <path d="M92 66C88 82 76 92 62 95" fill="none" stroke="#2f5f90" stroke-opacity=".35" stroke-width="2.4" stroke-linecap="round"/>
+      <circle cx="50" cy="50" r="35" fill="#3f6f9f" fill-opacity=".45"/>
+      <circle cx="50.8" cy="50.8" r="34" fill="url(#waxd)"/>
+      <circle cx="50" cy="50" r="34" fill="none" stroke="#2f5f90" stroke-opacity=".5" stroke-width="1.1"/>
+      <circle cx="50" cy="50" r="30" fill="none" stroke="#2f5f90" stroke-opacity=".4" stroke-width="1" transform="translate(.7 .7)"/>
+      <circle cx="50" cy="50" r="30" fill="none" stroke="#d8ecfb" stroke-opacity=".7" stroke-width="1" transform="translate(-.5 -.5)"/>
+      <g fill="#2f5f90" stroke="#2f5f90" fill-opacity=".55" stroke-opacity=".55" transform="translate(1 1)"><use href="#sprigmotif"/></g>
+      <g fill="#dcedfb" stroke="#dcedfb" fill-opacity=".8" stroke-opacity=".8" transform="translate(-.7 -.7)"><use href="#sprigmotif"/></g>
+      <g fill="#8fc0ea" stroke="#8fc0ea"><use href="#sprigmotif"/></g>
+      <g fill="#2f5f90" fill-opacity=".35"><circle cx="12" cy="62" r="1.2"/><circle cx="84" cy="30" r="1"/><circle cx="76" cy="84" r="1.3"/><circle cx="24" cy="20" r="1"/></g>
+    </symbol>
     <!-- ornamental divider -->
     <symbol id="ornament" viewBox="0 0 200 20">
       <g fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
@@ -114,7 +146,7 @@
         <polygon points="0,231 170,148 340,231" fill="#f1f7fd" stroke="#fff" stroke-opacity=".9"/>
       </svg>
       <span class="env-flap"><i class="ff"></i><i class="fb"></i></span>
-      <span class="seal"><i class="half l"><svg><use href="#heart"/></svg></i><i class="half r"><svg><use href="#heart"/></svg></i></span>
+      <span class="seal"><i class="half l"><svg viewBox="0 0 100 100"><use href="#wax"/></svg></i><i class="half r"><svg viewBox="0 0 100 100"><use href="#wax"/></svg></i></span>
     </button>
     <p class="gate-tap">tap to open</p>
   </div>
@@ -273,7 +305,7 @@
               <circle cx="32" cy="34" r="17" fill="#fff"/><circle cx="32" cy="34" r="10" fill="#eef6fd"/>
               <path d="M7 12v14c0 3 2 5 5 5s5-2 5-5V12M12 12v40M57 12c-5 3-7 9-7 16h7zM57 28v24"/>
             </g></svg>
-            <b>3:00</b><small>PM</small>
+            <b>2:30</b><small>PM</small>
           </div>
           <div class="info"><h3>Lunch</h3><p>Good food, good company.</p></div>
         </div>
@@ -342,6 +374,6 @@
   <span class="np" id="np">♪ a little music box</span>
 </button>
 <canvas id="fx" aria-hidden="true"></canvas>
-<script src="script.js?v=13"></script>
+<script src="script.js?v=16"></script>
 </body>
 </html>
