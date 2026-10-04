@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=17">
+  <link rel="stylesheet" href="styles.css?v=18">
   <noscript><style>.gate{display:none!important}body.locked{overflow:auto!important}.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body class="locked">
@@ -80,16 +80,20 @@
         <radialGradient id="waxh" cx=".32" cy=".26" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></radialGradient>
         <linearGradient id="waxd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6fabdc"/><stop offset="1" stop-color="#477fb5"/></linearGradient>
         <path id="leaf" d="M0 0C5-7 13-7 18 0C13 7 5 7 0 0Z"/>
+        <path id="petal" d="M0 -3C-6 -8 -6 -19 0 -23C6 -19 6 -8 0 -3Z"/>
         <g id="sprigmotif">
-          <path d="M31 72C43 60 57 44 68 28" fill="none" stroke-width="2.2" stroke-linecap="round"/>
-          <use href="#leaf" transform="translate(39.5 62) rotate(-100) scale(.8)"/>
-          <use href="#leaf" transform="translate(39.5 62) rotate(0) scale(.8)"/>
-          <use href="#leaf" transform="translate(49 51) rotate(-100) scale(.85)"/>
-          <use href="#leaf" transform="translate(49 51) rotate(0) scale(.85)"/>
-          <use href="#leaf" transform="translate(58.5 39.5) rotate(-100) scale(.8)"/>
-          <use href="#leaf" transform="translate(58.5 39.5) rotate(0) scale(.8)"/>
-          <use href="#leaf" transform="translate(66.5 29) rotate(-52) scale(.75)"/>
-          
+          <path d="M50 52C50 60 50 68 50 77" fill="none" stroke-width="2" stroke-linecap="round"/>
+          <use href="#leaf" transform="translate(50 69) rotate(-148) scale(.8)"/>
+          <use href="#leaf" transform="translate(50 69) rotate(-32) scale(.8)"/>
+          <use href="#petal" transform="translate(50 44) rotate(0) scale(.85)"/>
+          <use href="#petal" transform="translate(50 44) rotate(45) scale(.85)"/>
+          <use href="#petal" transform="translate(50 44) rotate(90) scale(.85)"/>
+          <use href="#petal" transform="translate(50 44) rotate(135) scale(.85)"/>
+          <use href="#petal" transform="translate(50 44) rotate(180) scale(.85)"/>
+          <use href="#petal" transform="translate(50 44) rotate(225) scale(.85)"/>
+          <use href="#petal" transform="translate(50 44) rotate(270) scale(.85)"/>
+          <use href="#petal" transform="translate(50 44) rotate(315) scale(.85)"/>
+          <circle cx="50" cy="44" r="6.5"/>
         </g>
       </defs>
       <path d="M50 4C67 2 81 9 91 22C99 34 98 51 95 63C92 79 80 92 62 96C46 99 29 95 16 84C4 73 1 56 5 41C8 25 21 7 50 4Z" fill="url(#waxg)"/>
@@ -104,6 +108,13 @@
       <g fill="#2f5f90" stroke="#2f5f90" fill-opacity=".55" stroke-opacity=".55" transform="translate(1 1)"><use href="#sprigmotif"/></g>
       <g fill="#dcedfb" stroke="#dcedfb" fill-opacity=".8" stroke-opacity=".8" transform="translate(-.7 -.7)"><use href="#sprigmotif"/></g>
       <g fill="#9ccbf2" stroke="#9ccbf2"><use href="#sprigmotif"/></g>
+      <g stroke="#2f5f90" stroke-opacity=".38" stroke-width=".7" fill="none" stroke-linecap="round">
+        <path d="M50 38V27M50 38V27" transform="rotate(0 50 44)"/><path d="M50 38V27" transform="rotate(45 50 44)"/><path d="M50 38V27" transform="rotate(90 50 44)"/><path d="M50 38V27" transform="rotate(135 50 44)"/>
+        <path d="M50 38V27" transform="rotate(180 50 44)"/><path d="M50 38V27" transform="rotate(225 50 44)"/><path d="M50 38V27" transform="rotate(270 50 44)"/><path d="M50 38V27" transform="rotate(315 50 44)"/>
+        <path d="M50 70l-9-6M50 70l9-6" />
+      </g>
+      <circle cx="50" cy="44" r="4.2" fill="#3f78ad" fill-opacity=".55"/>
+      <g fill="#d8ecfb" fill-opacity=".75"><circle cx="50" cy="41.5" r=".9"/><circle cx="52.4" cy="43" r=".9"/><circle cx="52" cy="46" r=".9"/><circle cx="48" cy="46" r=".9"/><circle cx="47.6" cy="43" r=".9"/><circle cx="50" cy="44" r=".9"/></g>
       <g fill="#2f5f90" fill-opacity=".35"><circle cx="12" cy="62" r="1.2"/><circle cx="84" cy="30" r="1"/><circle cx="76" cy="84" r="1.3"/><circle cx="24" cy="20" r="1"/></g>
     </symbol>
     <!-- ornamental divider -->
@@ -176,7 +187,7 @@
     <div class="section-head reveal">
       <p class="small-caps">6 october</p>
       <h2>The <em>birthday</em> girl</h2>
-      <p class="hand">today is all about you</p>
+      <p class="hand">the 6th is all about you</p>
     </div>
     <div class="collage">
       <svg class="sprig sl" aria-hidden="true"><use href="#sprig"/></svg>
@@ -374,6 +385,6 @@
   <span class="np" id="np">♪ a little music box</span>
 </button>
 <canvas id="fx" aria-hidden="true"></canvas>
-<script src="script.js?v=17"></script>
+<script src="script.js?v=18"></script>
 </body>
 </html>

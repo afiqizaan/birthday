@@ -439,3 +439,9 @@ h2 em{font-style:italic;color:var(--blue-deep)}
 @keyframes glow{0%,100%{transform:scale(.9);opacity:.5}50%{transform:scale(1.15);opacity:1}}
 .envelope::after{content:"";position:absolute;inset:0;border-radius:8px;background:var(--paper);mix-blend-mode:multiply;opacity:.9;pointer-events:none;z-index:3}
 .env-front{filter:drop-shadow(0 -1px 0 rgba(255,255,255,.7))}
+
+/* seal: smaller, gentler crack */
+.seal{width:80px;height:80px;margin:-46px 0 0 -40px}
+.seal::after{inset:-12px}
+.envelope.open .seal .l{transform:translate(-4px,2px) rotate(-4deg)}
+.envelope.open .seal .r{transform:translate(4px,-1px) rotate(4deg)}
